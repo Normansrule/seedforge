@@ -1,0 +1,13 @@
+flowchart LR
+  classDef hw fill:#e7f0ea,stroke:#2f6f4f,stroke-width:2px,color:#14273a
+  classDef sw fill:#f3f5f7,stroke:#5b6b7a,color:#14273a
+  ESB["Mushroom E-stop<br/>(latching)"]:::hw
+  PWR["NC contact<br/>breaks the 12 V actuator rail"]:::hw
+  MOT["Motors + servos de-energised"]:::hw
+  SNS["Rail sense: VMOT node -> 10 k / 4.7 k -> Uno D8<br/>(also catches a blown fuse or a broken wire)"]:::sw
+  FSM["Uno FSM -> SAFE_STOP<br/>drivers disabled, servo outputs off"]:::sw
+  DISP["host log / optional display<br/>'FAULT=ESTOP_OPEN'"]:::sw
+  ESB --> PWR --> MOT
+  PWR --> SNS --> FSM --> DISP
+  LIM["NC limit switches, tension trip,<br/>heartbeat watchdog, vision faults"]:::sw --> FSM
+  FSM -. "supplementary only" .-> MOT

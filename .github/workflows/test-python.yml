@@ -1,0 +1,22 @@
+name: Python tests
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { python: ["3.10", "3.12"] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "${{ matrix.python }}" }
+      - run: python -m pip install -e ".[dev]"
+      - name: Unit tests (geometry, protocol, simulator incl. C++ parity, vision, host runner, ledger)
+        run: python -m pytest
+      - name: Simulator smoke run
+        run: |
+          python -m seedforge.simulator --list
+          python -m seedforge.simulator normal --quiet
+      - name: Vision demo on the synthetic set
+        run: python -m seedforge.vision demo --out /tmp/synthetic

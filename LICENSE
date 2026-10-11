@@ -1,0 +1,44 @@
+SeedForge licensing summary
+===========================
+
+SeedForge uses three licences, one per kind of work. The full texts are in LICENSES/.
+
+  Software                      MIT                    LICENSES/MIT.txt
+    firmware/, software/, tools/, tests/, website/src, website/*.config.*, .github/
+
+  Hardware design files         CERN-OHL-S-2.0         LICENSES/CERN-OHL-S-2.0.txt
+    hardware/ (CAD source, STEP, STL, 3MF, GLB, drawings, wiring schedules, BOM data)
+
+  Documentation and media       CC-BY-SA-4.0           LICENSES/CC-BY-SA-4.0.txt
+    docs/, README.md and other Markdown files, renders, diagrams, animations,
+    validation/ templates, datasets/synthetic
+
+  NOT covered by these licences
+    archive/            original EECS 149 group coursework and the supplied R3 package,
+                        kept for provenance; no licence is granted for it here
+    LICENSES/           the licence texts themselves
+    third-party names, trademarks, datasheets and the cited Nature paper
+
+Copyright (c) 2026 Aleksander Norman and SeedForge contributors.
+
+The MIT licence text, applied to the software listed above:
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+Why three licences: docs/project/licensing.md

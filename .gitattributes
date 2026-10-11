@@ -1,0 +1,16 @@
+* text=auto eol=lf
+*.ino linguist-language=C++
+*.step -diff linguist-generated
+*.stl binary linguist-generated
+*.3mf binary
+*.glb binary
+*.png binary
+*.jpg binary
+*.gif binary
+hardware/cad/manifest.* linguist-generated
+hardware/cad/QA_REPORT.md linguist-generated
+hardware/bom/*.csv linguist-generated
+hardware/wiring/* linguist-generated
+docs/modules/*.md linguist-generated
+archive/** linguist-vendored
+archive/** -text

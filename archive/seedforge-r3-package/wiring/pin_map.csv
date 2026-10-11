@@ -1,0 +1,28 @@
+pin,assignment
+Uno D2,ROT_STEP
+Uno D3,ROT_DIR
+Uno D4,LIN_STEP
+Uno D5,LIN_DIR
+Uno D6,A4988_ENABLE
+Uno D7,HC_SR04_TRIG
+Uno D8,HC_SR04_ECHO
+Uno D9,E_STOP_SENSE
+Uno D10,LINEAR_HOME
+Uno D11,LINEAR_END
+Uno D12,SPI_MISO
+Uno D13,SPI_SCK
+Uno A0/D14,HX711_DOUT
+Uno A1/D15,HX711_SCK
+Uno A2,DANCER_POS
+Uno A3/D17,TFT_DC
+Uno A4,I2C_SDA
+Uno A5,I2C_SCL
+Uno D0/D1,ESP32 bridge UART; disconnect during upload
+PCA CH0,clamp servo
+PCA CH1,cutter servo
+PCA CH2,tail sweep
+PCA CH3,tail clamp
+PCA CH4,transfer gripper
+PCA CH5,transfer Z
+MCP GPA0-3,seed 28BYJ phases
+MCP GPB0-3,syringe 28BYJ phases

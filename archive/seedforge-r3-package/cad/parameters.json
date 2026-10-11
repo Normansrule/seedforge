@@ -1,0 +1,16 @@
+{
+  "bed_max": 180.0,
+  "module_x": 160.0,
+  "module_y": 120.0,
+  "module_t": 6.0,
+  "m3": 3.4,
+  "m4": 4.5,
+  "m5": 5.5,
+  "strip_w": 4.0,
+  "strip_t": 0.5,
+  "mandrel": 0.8,
+  "guide_w": 4.6,
+  "guide_h": 1.2,
+  "tail_radius": 14.0,
+  "seed_max": 6.0
+}

@@ -1,0 +1,10 @@
+# Vision process stops sending HEARTBEAT while winding.
+set hb_period_ms 500
+send HOME
+until READY 60000
+send START
+until WIND 60000
+step 800
+set hb_period_ms 0
+until SAFE_STOP 6000
+step 20

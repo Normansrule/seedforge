@@ -1,0 +1,20 @@
+{
+  "name": "course_target_45deg",
+  "provenance": "COURSE TARGET as stated (4.0 x 0.5 mm strip, 0.8 mm mandrel, 45 deg); ENGINEERING ASSUMPTION - geometrically inconsistent, see docs/carrier-geometry.md",
+  "strip_width_mm": 4.0,
+  "strip_thickness_mm": 0.5,
+  "mandrel_diameter_mm": 0.8,
+  "pitch_mm": 4.084,
+  "active_turns": 7,
+  "sacrificial_turns": 1,
+  "rate_rpm": 30.0,
+  "accel_rpm_s": 30.0,
+  "start_mm": 5.0,
+  "require_tension": false,
+  "require_vision": true,
+  "m3_enabled": false,
+  "demold_mm": 20.0,
+  "heartbeat_ms": 3000,
+  "vision": {"px_per_mm": 40.0, "max_gap_mm": 0.3, "max_overlap_mm": 0.3, "pitch_tol_frac": 0.15, "turns_tol": 0.5, "max_axis_sag_mm": 0.5},
+  "notes": "R3 development starting value. The first-order model predicts ~1.1 mm overlap at 45 deg; use it only to commission the machine, then replace with a measured recipe."
+}

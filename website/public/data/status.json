@@ -1,0 +1,126 @@
+{
+ "version": "0.3.0-alpha",
+ "revision": "R3.1",
+ "updated": "2026-10-11",
+ "items": [
+  {
+   "id": "carrier_reference",
+   "name": "Carrier reference geometry",
+   "level": "SOURCE-SUPPORTED",
+   "detail": "Body and tail lengths from Luo et al. 2023; tail and tip shapes RECONSTRUCTED.",
+   "evidence": [
+    "docs/carrier-geometry.md"
+   ]
+  },
+  {
+   "id": "geometry_model",
+   "name": "Helix geometry model",
+   "level": "ENGINEERING ASSUMPTION",
+   "detail": "First-order model, unit-tested; not compared with real coils yet.",
+   "evidence": [
+    "tests/geometry/test_geometry.py"
+   ]
+  },
+  {
+   "id": "machine_cad",
+   "name": "71 printed machine parts (M2 fasteners)",
+   "level": "CAD-VALIDATED",
+   "detail": "Watertight, positive volume, fit A1 Mini; S01 and T03 need repair (two bodies).",
+   "evidence": [
+    "hardware/cad/QA_REPORT.md"
+   ]
+  },
+  {
+   "id": "core_cell_layout",
+   "name": "Core-cell layout",
+   "level": "CAD-VALIDATED",
+   "detail": "No static interference; traverse sweep windows -60..+60 deg.",
+   "evidence": [
+    "hardware/cad/source/core_cell_layout.json"
+   ]
+  },
+  {
+   "id": "uno_firmware",
+   "name": "Uno core firmware",
+   "level": "SOFTWARE-TESTED",
+   "detail": "Compile-tested; hardware testing pending. 22 host tests under ASan/UBSan.",
+   "evidence": [
+    "tests/firmware/test_core.cpp"
+   ]
+  },
+  {
+   "id": "esp32_bridge",
+   "name": "ESP32-C3 bridge",
+   "level": "SOFTWARE-TESTED",
+   "detail": "Compile-tested; hardware testing pending.",
+   "evidence": [
+    "firmware/esp32/seedforge_bridge/seedforge_bridge.ino"
+   ]
+  },
+  {
+   "id": "host_sim",
+   "name": "Host software and simulator",
+   "level": "SOFTWARE-TESTED",
+   "detail": "Unit-tested; simulator traces identical to the compiled C++ core.",
+   "evidence": [
+    "tests/host/test_sim_parity.py"
+   ]
+  },
+  {
+   "id": "vision",
+   "name": "Vision QA",
+   "level": "SOFTWARE-TESTED",
+   "detail": "Synthetic set 6 TA / 10 TR / 0 FA / 0 FR. No real images yet.",
+   "evidence": [
+    "datasets/synthetic_reference/report.md"
+   ]
+  }
+ ],
+ "phases": [
+  {
+   "phase": 0,
+   "name": "Material characterization",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 1,
+   "name": "Feed + tension + synchronized winder",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 2,
+   "name": "Clamp + cutter + demold",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 3,
+   "name": "Tail forming",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 4,
+   "name": "Free drying",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 5,
+   "name": "Seed / tip assembly",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 6,
+   "name": "Computer-vision QA",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 7,
+   "name": "Automated transfer",
+   "status": "NOT STARTED"
+  },
+  {
+   "phase": 8,
+   "name": "Deployment research",
+   "status": "NOT STARTED"
+  }
+ ]
+}

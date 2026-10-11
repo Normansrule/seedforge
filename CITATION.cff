@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+message: "If you use SeedForge, please cite it as below, and cite the Nature paper that inspired it (see references)."
+title: "SeedForge: an open-source modular manufacturing platform for moisture-responsive wooden self-burying seed carriers"
+type: software
+version: 0.3.0-alpha
+date-released: "2026-10-11"
+authors:
+  - family-names: Norman
+    given-names: Aleksander
+  - name: "SeedForge contributors"
+repository-code: "https://github.com/Normansrule/seedforge"
+url: "https://normansrule.github.io/seedforge/"
+license:
+  - MIT
+  - CERN-OHL-S-2.0
+  - CC-BY-SA-4.0
+keywords:
+  - seed carrier
+  - hygromorphic wood
+  - reforestation
+  - open hardware
+  - winding machine
+  - computer vision
+abstract: >-
+  Research-prototype manufacturing platform (CAD, firmware, host software, simulator,
+  deterministic vision QA, documentation) for winding wet wood veneer into helical
+  seed-carrier bodies. Release v0.3.0-alpha is designed and software-tested but not
+  physically validated.
+references:
+  - type: article
+    title: "Autonomous self-burying seed carriers for aerial seeding"
+    authors:
+      - family-names: Luo
+        given-names: Danli
+      - family-names: Maheshwari
+        given-names: Aditi
+      - family-names: Danielescu
+        given-names: Andreea
+      - family-names: Li
+        given-names: Jiaji
+      - family-names: Yang
+        given-names: Yue
+      - family-names: Tao
+        given-names: Ye
+      - family-names: Sun
+        given-names: Lingyun
+      - family-names: Patel
+        given-names: Dinesh K.
+      - family-names: Wang
+        given-names: Guanyun
+      - family-names: Yang
+        given-names: Shu
+      - family-names: Zhang
+        given-names: Teng
+      - family-names: Yao
+        given-names: Lining
+    journal: Nature
+    volume: 614
+    issue: 7948
+    start: 463
+    end: 470
+    year: 2023
+    doi: 10.1038/s41586-022-05656-3

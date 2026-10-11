@@ -1,0 +1,584 @@
+{
+ "pins": [
+  {
+   "board": "Uno",
+   "pin": "D2",
+   "signal": "ROT_STEP",
+   "to": "A4988 rotation STEP",
+   "notes": "5 V output, PORTD2 (ISR)"
+  },
+  {
+   "board": "Uno",
+   "pin": "D3",
+   "signal": "ROT_DIR",
+   "to": "A4988 rotation DIR",
+   "notes": "5 V output"
+  },
+  {
+   "board": "Uno",
+   "pin": "D4",
+   "signal": "LIN_STEP",
+   "to": "A4988 linear STEP",
+   "notes": "5 V output, PORTD4 (ISR)"
+  },
+  {
+   "board": "Uno",
+   "pin": "D5",
+   "signal": "LIN_DIR",
+   "to": "A4988 linear DIR",
+   "notes": "5 V output"
+  },
+  {
+   "board": "Uno",
+   "pin": "D6",
+   "signal": "A4988_ENABLE",
+   "to": "both A4988 ENABLE",
+   "notes": "active LOW; 10 kOhm pull-up to 5 V keeps drivers off during reset"
+  },
+  {
+   "board": "Uno",
+   "pin": "D7",
+   "signal": "START",
+   "to": "pushbutton to GND",
+   "notes": "INPUT_PULLUP; BOOT=home, READY=start, moving=stop, SAFE_STOP=reset"
+  },
+  {
+   "board": "Uno",
+   "pin": "D8",
+   "signal": "ESTOP_FB",
+   "to": "switched 12 V rail via 10 kOhm (top) / 4.7 kOhm (to GND) divider",
+   "notes": "INPUT; about 3.8 V = rail present = safe; LOW = E-stop pressed, fuse blown or wire broken"
+  },
+  {
+   "board": "Uno",
+   "pin": "D9",
+   "signal": "HOME",
+   "to": "home microswitch NC to GND",
+   "notes": "INPUT_PULLUP; HIGH = actuated or broken wire"
+  },
+  {
+   "board": "Uno",
+   "pin": "D10",
+   "signal": "END",
+   "to": "end microswitch NC to GND",
+   "notes": "INPUT_PULLUP; HIGH = actuated or broken wire"
+  },
+  {
+   "board": "Uno",
+   "pin": "D11",
+   "signal": "HX711_DOUT",
+   "to": "HX711 DOUT",
+   "notes": "check the breakout's VDD/VCC: run HX711 logic at 5 V"
+  },
+  {
+   "board": "Uno",
+   "pin": "D12",
+   "signal": "HX711_SCK",
+   "to": "HX711 SCK",
+   "notes": "output"
+  },
+  {
+   "board": "Uno",
+   "pin": "D13",
+   "signal": "STATUS_LED",
+   "to": "on-board LED",
+   "notes": "solid = SAFE_STOP; never the only safety indication"
+  },
+  {
+   "board": "Uno",
+   "pin": "A0",
+   "signal": "DANCER",
+   "to": "10 kOhm pot wiper (F11)",
+   "notes": "0-5 V; pot ends to 5 V and GND"
+  },
+  {
+   "board": "Uno",
+   "pin": "A1",
+   "signal": "LINK_RX",
+   "to": "ESP32-C3 GPIO21 (D6) TX",
+   "notes": "3.3 V into 5 V input is read as HIGH"
+  },
+  {
+   "board": "Uno",
+   "pin": "A2",
+   "signal": "LINK_TX",
+   "to": "1 kOhm -> ESP32-C3 GPIO20 (D7) RX; 2 kOhm to GND",
+   "notes": "divider makes ~3.3 V; never drive the C3 with 5 V"
+  },
+  {
+   "board": "Uno",
+   "pin": "A3",
+   "signal": "GUARD",
+   "to": "cutter-guard NC switch to GND (optional)",
+   "notes": "set GUARD_FITTED=true in the sketch when wired"
+  },
+  {
+   "board": "Uno",
+   "pin": "A4",
+   "signal": "I2C_SDA",
+   "to": "PCA9685 0x40, ICM-20948 0x69, MCP23017 0x20",
+   "notes": "check module pull-up voltage; 3.3 V-only modules need a level shifter"
+  },
+  {
+   "board": "Uno",
+   "pin": "A5",
+   "signal": "I2C_SCL",
+   "to": "same bus",
+   "notes": "400 kHz"
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO21/D6",
+   "signal": "LINK_TX",
+   "to": "Uno A1",
+   "notes": "3.3 V; the ESP32-C3 bridge is optional"
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO20/D7",
+   "signal": "LINK_RX",
+   "to": "Uno A2 via divider",
+   "notes": "3.3 V max"
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO8/D8",
+   "signal": "TFT_SCK",
+   "to": "ILI9341 SCK",
+   "notes": ""
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO9/D9",
+   "signal": "TFT_MISO",
+   "to": "ILI9341 MISO",
+   "notes": "strapping pin: leave the boot button alone at power-up"
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO10/D10",
+   "signal": "TFT_MOSI",
+   "to": "ILI9341 MOSI",
+   "notes": ""
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO3/D1",
+   "signal": "TFT_CS",
+   "to": "ILI9341 CS",
+   "notes": ""
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO4/D2",
+   "signal": "TFT_DC",
+   "to": "ILI9341 DC",
+   "notes": ""
+  },
+  {
+   "board": "ESP32-C3",
+   "pin": "GPIO5/D3",
+   "signal": "TFT_RST",
+   "to": "ILI9341 RESET",
+   "notes": ""
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH0",
+   "signal": "CLAMP",
+   "to": "M3 clamp servo",
+   "notes": "5 V servo rail"
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH1",
+   "signal": "CUTTER",
+   "to": "M3 cutter servo",
+   "notes": ""
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH2",
+   "signal": "TAIL_SWEEP",
+   "to": "M4 sweep servo",
+   "notes": ""
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH3",
+   "signal": "TAIL_CLAMP",
+   "to": "M4 clamp servo",
+   "notes": ""
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH4",
+   "signal": "TRANSFER_GRIP",
+   "to": "M9 gripper",
+   "notes": ""
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH5",
+   "signal": "TRANSFER_Z",
+   "to": "M9 Z lift",
+   "notes": ""
+  },
+  {
+   "board": "PCA9685",
+   "pin": "CH6",
+   "signal": "DEMOLD_SUPPORT",
+   "to": "M3 split support (W07/W08)",
+   "notes": "R3.1 addition"
+  },
+  {
+   "board": "MCP23017",
+   "pin": "GPA0-3",
+   "signal": "SEED_INDEX",
+   "to": "ULN2003 #1 IN1-IN4",
+   "notes": "M6 seed indexer 28BYJ-48"
+  },
+  {
+   "board": "MCP23017",
+   "pin": "GPB0-3",
+   "signal": "SYRINGE",
+   "to": "ULN2003 #2 IN1-IN4",
+   "notes": "M6 syringe 28BYJ-48"
+  }
+ ],
+ "connections": [
+  {
+   "subsystem": "Power",
+   "from": "12 V 3 A certified adapter",
+   "from_pin": "barrel plug",
+   "to": "DC barrel jack",
+   "to_pin": "5.5 x 2.1",
+   "rail": "12V",
+   "notes": "budget supply; check polarity (centre +) with a meter"
+  },
+  {
+   "subsystem": "Power",
+   "from": "DC barrel jack",
+   "from_pin": "+",
+   "to": "Fuse 3 A",
+   "to_pin": "in",
+   "rail": "12V",
+   "notes": "fuse first, before anything else"
+  },
+  {
+   "subsystem": "Power",
+   "from": "DC barrel jack",
+   "from_pin": "-",
+   "to": "Star ground block",
+   "to_pin": "GND",
+   "rail": "GND",
+   "notes": "single star point"
+  },
+  {
+   "subsystem": "Power",
+   "from": "Fuse 3 A",
+   "from_pin": "out",
+   "to": "E-stop contact (NC)",
+   "to_pin": "COM",
+   "rail": "12V",
+   "notes": "E-stop physically breaks the actuator rail"
+  },
+  {
+   "subsystem": "Power",
+   "from": "E-stop contact (NC)",
+   "from_pin": "NC",
+   "to": "Fuse 2 A (motors)",
+   "to_pin": "in",
+   "rail": "12V_SW",
+   "notes": ""
+  },
+  {
+   "subsystem": "Power",
+   "from": "Fuse 2 A (motors)",
+   "from_pin": "out",
+   "to": "A4988 rotation / linear",
+   "to_pin": "VMOT",
+   "rail": "12V_SW",
+   "notes": "100 uF at each VMOT; set Vref before connecting motors"
+  },
+  {
+   "subsystem": "Power",
+   "from": "E-stop contact (NC)",
+   "from_pin": "NC",
+   "to": "Buck 12->5 V (LM2596)",
+   "to_pin": "VIN+",
+   "rail": "12V_SW",
+   "notes": "servos lose power with the E-stop as well; set 5.0 V before connecting"
+  },
+  {
+   "subsystem": "Power",
+   "from": "Buck 12->5 V (LM2596)",
+   "from_pin": "VOUT+",
+   "to": "PCA9685",
+   "to_pin": "V+ (screw terminal)",
+   "rail": "5V_SERVO",
+   "notes": "never feed from the Uno 5 V pin"
+  },
+  {
+   "subsystem": "Power",
+   "from": "Buck 12->5 V (LM2596)",
+   "from_pin": "VOUT+",
+   "to": "ULN2003 boards, LED back-light strip",
+   "to_pin": "VCC",
+   "rail": "5V_SERVO",
+   "notes": "back-light could also run from USB"
+  },
+  {
+   "subsystem": "Power",
+   "from": "all module grounds",
+   "from_pin": "GND",
+   "to": "Star ground block",
+   "to_pin": "GND",
+   "rail": "GND",
+   "notes": "Uno and ESP32 grounds join here once"
+  },
+  {
+   "subsystem": "Logic power",
+   "from": "PC / powered hub",
+   "from_pin": "USB",
+   "to": "Arduino Uno",
+   "to_pin": "USB-B",
+   "rail": "5V_USB",
+   "notes": "development power"
+  },
+  {
+   "subsystem": "Logic power",
+   "from": "PC / powered hub",
+   "from_pin": "USB",
+   "to": "ESP32-C3 (optional)",
+   "to_pin": "USB-C",
+   "rail": "5V_USB",
+   "notes": "do not also back-feed its 5 V pin"
+  },
+  {
+   "subsystem": "Safety",
+   "from": "12V_SW motor rail (VMOT node, after the E-stop and the 2 A fuse)",
+   "from_pin": "+",
+   "to": "10 kOhm -> Uno D8; 4.7 kOhm D8 -> GND",
+   "to_pin": "D8",
+   "rail": "sense",
+   "notes": "Uno sees about 3.8 V while the rail is live; ESTOP_SENSE_RAIL=true in sf_config.h"
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Uno",
+   "from_pin": "D2",
+   "to": "A4988 rotation",
+   "to_pin": "STEP",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Uno",
+   "from_pin": "D3",
+   "to": "A4988 rotation",
+   "to_pin": "DIR",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Uno",
+   "from_pin": "D4",
+   "to": "A4988 linear",
+   "to_pin": "STEP",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Uno",
+   "from_pin": "D5",
+   "to": "A4988 linear",
+   "to_pin": "DIR",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Uno",
+   "from_pin": "D6",
+   "to": "A4988 rotation + linear",
+   "to_pin": "ENABLE",
+   "rail": "5V_LOGIC",
+   "notes": "shared, active LOW, 10 k pull-up to 5 V"
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Uno",
+   "from_pin": "5V / GND",
+   "to": "A4988 rotation + linear",
+   "to_pin": "VDD / GND",
+   "rail": "5V_LOGIC",
+   "notes": "RESET tied to SLEEP on each board"
+  },
+  {
+   "subsystem": "Winder",
+   "from": "A4988 (both)",
+   "from_pin": "MS1/MS2/MS3",
+   "to": "5 V",
+   "to_pin": "HIGH",
+   "rail": "5V_LOGIC",
+   "notes": "1/16 microstepping; firmware assumes 3200 usteps/rev"
+  },
+  {
+   "subsystem": "Winder",
+   "from": "A4988 rotation",
+   "from_pin": "1A/1B/2A/2B",
+   "to": "NEMA17 rotation",
+   "to_pin": "coil A / coil B",
+   "rail": "12V_SW",
+   "notes": "keyed 4-pin connector; never unplug while powered"
+  },
+  {
+   "subsystem": "Winder",
+   "from": "A4988 linear",
+   "from_pin": "1A/1B/2A/2B",
+   "to": "NEMA17 linear",
+   "to_pin": "coil A / coil B",
+   "rail": "12V_SW",
+   "notes": ""
+  },
+  {
+   "subsystem": "Winder",
+   "from": "Home microswitch (W14)",
+   "from_pin": "C / NC",
+   "to": "Uno",
+   "to_pin": "D9 / GND",
+   "rail": "5V_LOGIC",
+   "notes": "NC: a broken wire reads as 'actuated'"
+  },
+  {
+   "subsystem": "Winder",
+   "from": "End microswitch (W14)",
+   "from_pin": "C / NC",
+   "to": "Uno",
+   "to_pin": "D10 / GND",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Winder",
+   "from": "START pushbutton",
+   "from_pin": "NO",
+   "to": "Uno",
+   "to_pin": "D7 / GND",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Tension",
+   "from": "Load cell",
+   "from_pin": "E+/E-/A+/A-",
+   "to": "HX711",
+   "to_pin": "E+/E-/A+/A-",
+   "rail": "analog",
+   "notes": "short twisted leads"
+  },
+  {
+   "subsystem": "Tension",
+   "from": "HX711",
+   "from_pin": "VCC / GND",
+   "to": "Uno",
+   "to_pin": "5V / GND",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Tension",
+   "from": "HX711",
+   "from_pin": "DOUT / SCK",
+   "to": "Uno",
+   "to_pin": "D11 / D12",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "Tension",
+   "from": "Dancer pot (F11)",
+   "from_pin": "ends / wiper",
+   "to": "Uno",
+   "to_pin": "5V,GND / A0",
+   "rail": "5V_LOGIC",
+   "notes": ""
+  },
+  {
+   "subsystem": "I2C",
+   "from": "Uno",
+   "from_pin": "A4 / A5",
+   "to": "PCA9685, ICM-20948, MCP23017",
+   "to_pin": "SDA / SCL",
+   "rail": "5V_LOGIC",
+   "notes": "check each breakout's logic voltage"
+  },
+  {
+   "subsystem": "I2C",
+   "from": "Uno",
+   "from_pin": "5V / GND",
+   "to": "PCA9685",
+   "to_pin": "VCC / GND",
+   "rail": "5V_LOGIC",
+   "notes": "logic only; servo power on V+"
+  },
+  {
+   "subsystem": "Servos",
+   "from": "PCA9685",
+   "from_pin": "CH0 / CH1 / CH6",
+   "to": "clamp / cutter / demold-support servos",
+   "to_pin": "signal",
+   "rail": "PWM",
+   "notes": "M3"
+  },
+  {
+   "subsystem": "Link",
+   "from": "ESP32-C3",
+   "from_pin": "GPIO21 TX",
+   "to": "Uno",
+   "to_pin": "A1",
+   "rail": "3.3V",
+   "notes": "38400 baud"
+  },
+  {
+   "subsystem": "Link",
+   "from": "Uno",
+   "from_pin": "A2",
+   "to": "1 kOhm -> ESP32-C3 GPIO20 RX (2 kOhm to GND)",
+   "to_pin": "",
+   "rail": "divided",
+   "notes": ""
+  },
+  {
+   "subsystem": "Link",
+   "from": "ESP32-C3",
+   "from_pin": "GND",
+   "to": "Uno",
+   "to_pin": "GND",
+   "rail": "GND",
+   "notes": ""
+  },
+  {
+   "subsystem": "UI",
+   "from": "ESP32-C3",
+   "from_pin": "GPIO8/9/10/3/4/5",
+   "to": "ILI9341",
+   "to_pin": "SCK/MISO/MOSI/CS/DC/RST",
+   "rail": "3.3V",
+   "notes": "VCC and LED to 3V3"
+  },
+  {
+   "subsystem": "Vision",
+   "from": "Host PC",
+   "from_pin": "USB",
+   "to": "Camera",
+   "to_pin": "USB",
+   "rail": "data",
+   "notes": "frames stay on the host; only events go to the controller"
+  }
+ ]
+}

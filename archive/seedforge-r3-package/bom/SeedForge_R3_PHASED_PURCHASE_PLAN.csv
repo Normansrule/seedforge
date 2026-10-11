@@ -1,0 +1,71 @@
+phase,priority,module,qty,item,specification,status,target_unit_cost_usd,target_total_usd,notes
+1,core,Control,1,Arduino Uno R3,existing low-level motion controller,owned/sponsored,0.0,0.0,Reuse current project firmware base.
+1,core,Control,2,A4988 stepper driver,with heatsink; set current limit conservatively,owned/sponsored,0.0,0.0,"One driver for rotation, one for linear axis."
+1,core,Motion,2,NEMA17 stepper motor,40-45 Ncm class is sufficient starting point,owned/sponsored,0.0,0.0,Existing motors.
+1,core,Vision,1,Intel RealSense / existing camera,use current sponsored camera,owned/sponsored,0.0,0.0,Best low-cost option is to reuse it rather than buy new vision hardware.
+1,core,Sensors,1,SparkFun ICM-20948 9DoF,I2C breakout,owned/sponsored,0.0,0.0,"Use as vibration supervisor, not primary winding-quality PID feedback."
+1-6,as-needed,UI,1,2.2 inch ILI9341 display,SPI,owned/sponsored,0.0,0.0,State display.
+1-6,as-needed,Sensors,1,HC-SR04 ultrasonic,5 V,owned/sponsored,0.0,0.0,"Use for gross presence/position only, not sub-mm coil measurement."
+1,core,Control,1,ESP32-C3 USB-C board,BLE/Wi-Fi bridge; XIAO/SuperMini class,buy,6.0,6.0,"Camera host sends pass/fail/length events to ESP32, then UART to Uno."
+1-6,as-needed,Control,1,PCA9685 servo board,16-channel I2C PWM,buy,6.0,6.0,Moves servos without consuming Uno timing resources.
+1-6,as-needed,Control,1,MCP23017 I/O expander,"I2C, 16 GPIO",buy,4.0,4.0,Drives two ULN2003 stepper boards for seed indexer and syringe.
+1,core,Sensors,1,1 kg load cell + HX711,bar load cell; 24-bit amplifier,buy,7.0,7.0,Primary tension feedback.
+1-6,as-needed,Sensors,1,10k linear potentiometer,panel or rotary,buy,2.0,2.0,Dancer-arm position; optional if load cell is stable.
+1-6,as-needed,Sensors,4,lever microswitch,NC preferred for home/end sensing,buy,1.0,4.0,Two winding axis endpoints + optional gantry home switches.
+2-5,next,Actuators,5,MG90S metal-gear micro servo,5 V,buy,4.0,20.0,"Clamp, cutter, tail sweep, tail clamp, transfer gripper/Z. SG90 can be substituted for light loads."
+2-5,next,Actuators,2,28BYJ-48 + ULN2003,5 V geared stepper kit,buy,4.0,8.0,Seed indexing and syringe plunger.
+1,core,Power,1,65 W USB-C PD supply,20 V PD profile,buy,24.0,24.0,Single wall supply for bench prototype. Do not power motors through Arduino USB.
+1,core,Power,1,USB-C PD trigger board,request 20 V output,buy,5.0,5.0,Feeds 12 V buck regulator.
+1,core,Power,1,20 V to 12 V buck converter,5 A continuous minimum with airflow,buy,10.0,10.0,12 V motor rail.
+1,core,Power,1,12 V to 5 V buck converter,5 A minimum,buy,8.0,8.0,"Servo, fan, auxiliary 5 V rail."
+1-6,as-needed,Power,1,USB 2.0 powered hub,4-port,buy,10.0,10.0,"Power/data for Uno, ESP32 and optional camera host peripherals."
+1-6,as-needed,Power,1,fused DC distribution block,inline 5 A fuse + 2 A branch fuses,buy,8.0,8.0,Star distribution; E-stop interrupts actuator rails.
+1,core,Power,1,mushroom E-stop switch,latching NC contacts,buy,9.0,9.0,Prototype actuator power interruption. A production machine requires rated safety hardware and guarding.
+1-6,as-needed,Power,2,panel pushbutton,momentary start/reset,buy,2.0,4.0,Start and reset.
+1,core,Power,1,wire + ferrules + terminal blocks,22-18 AWG logic/actuator wire,buy,15.0,15.0,Avoid loose Dupont leads on moving hardware.
+1,core,Winder mechanics,1,T8x8 lead screw + brass anti-backlash nut,300 mm,buy,10.0,10.0,Linear winding axis.
+1,core,Winder mechanics,2,8 mm smooth rod,300 mm hardened steel,buy,7.0,14.0,Linear guide rails.
+1,core,Winder mechanics,4,LM8UU bearing,15 mm OD,buy,2.0,8.0,W03 carriage.
+1,core,Winder mechanics,1,5x8 mm flexible shaft coupler,NEMA17 to T8 lead screw,buy,5.0,5.0,Linear axis coupling.
+1,core,Winder mechanics,1,5 mm shaft mini collet/pin chuck,0.5-3 mm grip range,buy,12.0,12.0,Holds 0.8 mm mandrel with lower runout than a printed chuck.
+1-6,as-needed,Winder mechanics,4,608ZZ bearing,8x22x7 mm,buy,1.0,4.0,Spool and shaft support.
+1-6,as-needed,Winder mechanics,4,623ZZ bearing,3x10x4 mm,buy,1.0,4.0,Small rollers.
+1,core,Winder mechanics,2,0.8 mm stainless spring wire,straight rod/mandrel stock,buy,3.0,6.0,Cut and polish ends; inspect straightness.
+1-6,as-needed,Winder mechanics,1,small compression/extension spring assortment,for dancer tension,buy,6.0,6.0,Set low preload; tension must be measured experimentally.
+1-6,as-needed,Winder mechanics,1,felt + silicone tubing + PTFE tape,contact-surface consumables,buy,8.0,8.0,Low-cost compliant/low-friction interfaces.
+2-5,next,Cut/assembly,1,spring-return micro shear,guardable manual/hobby shear mechanism,buy,12.0,12.0,Use X03/X04 mount; do not print a cutting blade.
+2-5,next,Cut/assembly,4,10 mL Luer-lock syringe,adhesive dispensing,buy,1.0,4.0,Use one installed + spares.
+2-5,next,Cut/assembly,1,blunt dispensing needle assortment,18-25 ga starting range,buy,6.0,6.0,Choose based on validated biodegradable adhesive viscosity.
+4-6,next,Drying/QA,1,120 mm USB fan,5 V low-noise,buy,10.0,10.0,Room-temperature free drying; no heater in R1.
+4-6,next,Drying/QA,1,5 V LED ring/light,40-60 mm ring,buy,6.0,6.0,Consistent computer-vision illumination.
+1,core,Frame,1,18 mm plywood/MDF bench base,about 800 x 350 mm,buy,18.0,18.0,Cheapest base. C01 tiles are optional; drilling template included.
+1,core,Fasteners,1,M3 screw/nut/washer assortment,M3x6 to M3x30,buy,15.0,15.0,Primary system fastener size.
+1-6,as-needed,Fasteners,1,M2 screw assortment,servo and guide lids,buy,8.0,8.0,M2x6 to M2x16.
+1-6,as-needed,Fasteners,1,M5 bolt/nut assortment,bench slots / frame,buy,8.0,8.0,Optional structural fasteners.
+1-6,as-needed,Fasteners,50,M3 heat-set insert,OD ~4.6 mm,buy,0.12,6.0,Optional; through-bolts are cheaper but inserts make modules cleaner.
+7,later/optional,Transfer gantry (optional automation),2,NEMA17 stepper,34-40 mm body,buy,10.0,20.0,Skip if reusing a donor 3D-printer XY gantry.
+7,later/optional,Transfer gantry (optional automation),2,2020 extrusion,700-800 mm lengths,buy,13.0,26.0,X/Y rails; donor Ender-style frame is cheaper if available.
+7,later/optional,Transfer gantry (optional automation),1,GT2 belt + pulley + idler kit,6 mm belt,buy,20.0,20.0,Two axes.
+7,later/optional,Transfer gantry (optional automation),8,V-wheel/bearing set,Ender-style,buy,2.0,16.0,Alternative: MGN12 rails if already owned.
+1,core,Printing,2,PETG filament,1 kg spools,buy,20.0,40.0,Two spools usually cover the core prototype at moderate infill if plywood replaces the seven large C01 tiles; full all-plastic set may need more.
+1-6,as-needed,Printing,1,TPU or silicone sheet,soft jaws/liners,buy,10.0,10.0,Silicone sheet is easier than TPU for tiny compliant interfaces.
+8,later/optional,Drone,1,450-class quadcopter frame,purchased frame; do not print motor arms,buy,25.0,25.0,Start with conventional proven airframe.
+8,later/optional,Drone,4,2212-class brushless motor,~900-1000 KV for 4S/450-class setup,buy,11.0,44.0,Final motor/prop/battery match must be validated as a set.
+8,later/optional,Drone,4,30 A ESC,ArduPilot-compatible PWM/DShot as selected,buy,8.0,32.0,Match motor and battery.
+8,later/optional,Drone,2,propeller pairs,appropriate for motor/frame,buy,6.0,12.0,Buy spares; verify direction and balance.
+8,later/optional,Drone,1,ArduPilot-capable flight controller,Pixhawk-class or equivalent,buy,60.0,60.0,Use proven autopilot rather than writing flight stabilization from scratch.
+8,later/optional,Drone,1,GNSS + compass module,u-blox-class,buy,22.0,22.0,Positioning and geofence.
+8,later/optional,Drone,1,Raspberry Pi Zero 2 W,low-cost companion computer,buy,25.0,25.0,Simple OpenCV/TFLite terrain classification. Upgrade to Pi 5 only if model demands it.
+8,later/optional,Drone,1,Pi camera / USB camera,downward-looking,buy,20.0,20.0,Use D06 mount or adapt.
+8,later/optional,Drone,1,RP2040 Zero / XIAO RP2040,payload gate controller,buy,5.0,5.0,Keeps gate timing/state separate from Linux companion.
+8,later/optional,Drone,1,PCA9685 servo board,payload servo driver,buy,6.0,6.0,Four gates.
+8,later/optional,Drone,4,MG90S micro servo,gate actuation,buy,4.0,16.0,One per cassette cell.
+8,later/optional,Drone,2,5 V BEC/buck,5 A Pi rail + 3 A servo rail,buy,9.0,18.0,Separate Pi and servo rails.
+8,later/optional,Drone,1,4S 4000-5000 mAh LiPo,appropriate C rating,buy,40.0,40.0,Flight endurance depends on validated aircraft mass and propulsion system.
+8,later/optional,Drone,1,balance charger,4S LiPo capable,buy,35.0,35.0,Do not improvise charging.
+8,later/optional,Drone,1,RC transmitter/receiver,6+ channels,buy,65.0,65.0,Omit cost if already owned.
+8,later/optional,Drone,1,telemetry radio or Wi-Fi link,ground coordinator,buy,25.0,25.0,Cheapest swarm strategy uses centrally allocated non-overlapping sectors rather than complex peer-to-peer mesh.
+1,core,M2 winder,5,0.8 mm precision straight stainless/spring-steel rod,0.8 mm diameter; cut to ~100 mm working mandrels,buy,1.5,7.5,Working mandrel corresponding to paper geometry. Buy metal rod; MR01 is CAD reference only.
+1-6,as-needed,M2 winder,1,miniature drill chuck / pin-vise shaft adapter,grip range including 0.8 mm; shaft compatible with NEMA coupler,buy,8.0,8.0,Preferred over relying on a printed 0.8 mm collet.
+1-6,as-needed,M2 winder,1,PTFE or brass guide tube,~1.0 mm ID; short low-friction mandrel support sleeve,buy,4.0,4.0,Supports the 0.8 mm rod without using a printed surface directly.
+0/experimental,optional,Paper large-carrier option,2,3 mm smooth stainless rod,3 mm diameter x 140 mm or longer,optional,4.0,8.0,Only for large whitebark-pine carrier experiments; MR05 is CAD reference.

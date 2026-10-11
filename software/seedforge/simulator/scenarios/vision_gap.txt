@@ -1,0 +1,10 @@
+# Vision host reports a gap during VERIFY.
+set hb_period_ms 500
+send HOME
+until READY 60000
+send START
+until VERIFY 200000
+step 300
+send LENGTH_MM=34.90
+send FAULT_GAP
+step 50

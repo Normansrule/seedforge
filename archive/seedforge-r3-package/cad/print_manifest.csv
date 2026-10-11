@@ -1,0 +1,56 @@
+id,name,module,qty,material,x_mm,y_mm,z_mm,volume_cm3,notes,orientation
+C01,module_base_160x120,common,7,PETG,160.0,120.0,6.0,111.85,Common 25 mm M3 grid and four M5 slots. Bolt modules to plywood or 2020 rails.,flat base on bed
+C02,cable_clip_dual,common,10,PETG,28.0,16.0,12.0,4.18,Two small cable channels; use zip ties for strain relief.,flat base on bed
+C03,electronics_box,common,1,PETG,170.0,110.0,42.0,149.59,"Holds Uno, ESP32 bridge, A4988s, DC modules, terminal blocks. Keep motor power and logic wiring separated.",open side up
+C04,electronics_vented_lid,common,1,PETG,170.0,110.0,3.0,52.14,Ventilated lid; use M3 screws.,flat base on bed
+C05,ili9341_bezel,common,1,PETG,84.0,64.0,5.0,14.36,Generic 2.2 inch ILI9341 bezel. Verify your PCB outline before final print.,flat base on bed
+F01,spool_stand_left,M1 feed,1,PETG,70.0,36.0,86.0,45.83,Pair supports a 5 mm axle with 608 bearings; 120 mm maximum spool diameter.,side wall on bed
+F02,spool_stand_right,M1 feed,1,PETG,70.0,36.0,86.0,41.2,Pair supports a 5 mm axle with 608 bearings; 120 mm maximum spool diameter.,side wall on bed
+F03,spool_hub,M1 feed,2,PETG,62.0,62.0,18.0,28.75,Two hubs clamp the veneer reel on 5 mm axle. Add felt washers for passive drag.,flat base on bed
+F04,dancer_arm,M1 feed,1,PETG,82.0,14.0,6.0,6.0,Spring-loaded dancer arm; potentiometer or hall sensor may track position.,flat base on bed
+F05,dancer_roller,M1 feed,2,PETG,30.0,30.0,10.0,5.19,Use M3 shoulder screw or smooth axle; optionally sleeve with silicone tube.,flat base on bed
+F06,veneer_guide_45deg_lower,M1 feed,1,PETG+PTFE,55.0,28.0,8.0,11.26,4.6 x 1.2 mm smooth guide channel. Rotate entire bracket to calibrated winding angle.,flat base on bed
+F07,veneer_guide_lid,M1 feed,1,PETG,55.0,28.0,2.5,3.8,"Light lid for F06; M2 screws, do not pinch strip.",flat base on bed
+W01,nema17_rotation_mount,M2 winder,1,PETG,66.0,66.0,66.0,57.33,NEMA17 face mount; use purchased flexible coupler + small collet/pin vise for 0.8 mm mandrel.,broad side on bed
+W02,608_mandrel_support,M2 winder,1,PETG,56.0,32.0,42.0,32.55,"608 bearing support for driven chuck/shaft; mandrel itself is metal, not printed.",bearing bore horizontal
+W03,lm8uu_linear_carriage,M2 winder,1,PETG,90.0,70.0,30.0,75.8,"Two 15.4 mm LM8UU bores, 56 mm apart. Clamp bearings with zip ties through slots.",flat base on bed
+W04,t8_nut_carrier,M2 winder,1,PETG,50.0,42.0,28.0,28.45,Fits common flange T8 anti-backlash nut. Confirm your nut hole pattern; ream if needed.,side on bed
+W05,mandrel_end_guide,M2 winder,1,PETG,42.0,36.0,40.0,15.83,2.2 mm bore accepts a short brass/PTFE guide tube around the steel mandrel.,flat base on bed
+W06,camera_tilt_mount,M2 winder,1,PETG,58.0,42.0,40.0,25.66,Adjustable RealSense/USB camera adapter mount; add camera-specific plate with M3 slots.,flat base on bed
+W07,micro_release_clamp_lower,M2 winder,1,PETG+silicone,34.0,12.0,26.0,4.93,Split demold collar. Tune the silicone-lined opening to the measured wet coil OD; closes lightly while mandrel retracts.,flat base on bed
+W08,micro_release_clamp_upper,M2 winder,1,PETG+silicone,34.0,12.0,26.0,4.93,Mate W07. This is a fit-test mechanism; wet demolding must be validated before unattended operation.,flat base on bed
+X01,sg90_clamp_mount,M3 clamp-cut,1,PETG,68.0,44.0,32.0,32.38,SG90/MG90S-class clamp bracket; verify exact servo body dimensions.,flat base on bed
+X02,soft_clamp_jaw,M3 clamp-cut,2,PETG+silicone,34.0,13.0,12.0,3.78,"Bond 1 mm silicone pad to jaw. Clamp sacrificial tail/handling tab, not active coils.",flat base on bed
+X03,guarded_shear_mount,M3 clamp-cut,1,PETG,88.0,58.0,41.0,53.17,Universal mount for purchased spring-return micro shear. Do not print the blade.,flat base on bed
+X04,cutter_guard,M3 clamp-cut,1,PETG prototype / polycarbonate final,96.0,66.0,44.0,73.8,Bench guard shell. Production guard should be transparent impact-rated polycarbonate with interlock.,open face down
+T01,tail_former_left,M4 tail former,2,PETG,23.8,44.0,8.8,4.23,"Split wet-forming mandrel, 14 mm radius, 4.8 mm channel. Experimental geometry.",flat base on bed
+T02,tail_former_right,M4 tail former,2,PETG,23.8,44.0,8.8,4.23,Mate with T01. Split enables wet release without dragging over an undercut.,flat base on bed
+T03,tail_sweep_shoe,M4 tail former,1,PETG+PTFE,43.6,31.0,5.0,2.63,Servo-driven smooth sweep shoe. Line strip-contact surface with PTFE tape.,flat base on bed
+T04,tail_blank_clamp,M4 tail former,2,PETG+silicone,46.0,22.0,24.0,9.11,Light clamp for auxiliary tail blank during forming.,flat base on bed
+S01,seed_hopper,M5 seed+glue,1,PETG,95.0,95.0,98.0,180.04,Species-specific low-cost gravity hopper. Use only dry seeds; pocket disk below throat meters one seed.,open top up
+S02,seed_singulator_disk_6mm,M5 seed+glue,1,PETG,72.0,72.0,5.0,19.01,Six 6.8 mm pockets over 180 degrees for a 28BYJ-48 indexing mechanism. Regenerate pocket size per seed species.,flat base on bed
+S03,28byj_seed_indexer_mount,M5 seed+glue,1,PETG,68.0,56.0,42.0,42.26,Mounts 28BYJ-48 below singulator disk; use metal M3 standoffs if needed.,flat base on bed
+S04,three_tail_assembly_nest,M5 seed+glue,1,PETG+silicone,116.0,116.0,8.0,80.45,Three 120 degree tail channels around central tip cavity. Use soft inserts where body contacts fixture.,flat base on bed
+S05,10ml_syringe_holder,M5 seed+glue,1,PETG,72.0,52.0,28.0,76.23,Nominal 20-21 mm syringe barrel. Measure syringe before final print.,flat base on bed
+S06,syringe_plunger_carriage,M5 seed+glue,1,PETG,48.0,30.0,16.0,20.42,M5 threaded-rod plunger carriage driven by 28BYJ-48. Add current/time limit to prevent overpressure.,flat base on bed
+S07,tip_mold_half_A,M5 seed+glue,2,PETG mold master / silicone working insert,72.0,48.0,14.0,43.46,"Two identical mold masters; clamp face-to-face around the seed/tail junction. Validate paste, release and seed viability; do not heat live seed.",flat base on bed
+S08,tip_mold_half_B,M5 seed+glue,2,PETG mold master / silicone working insert,72.0,48.0,14.0,43.46,"Two identical mold masters; clamp face-to-face around the seed/tail junction. Validate paste, release and seed viability; do not heat live seed.",flat base on bed
+Q01,free_dry_tray,M6 dry+QA,4,PETG+PTFE liner,160.0,120.0,10.0,88.21,Free-dry tray: no clamps on wet wood. Use PTFE/silicone mesh liner and room-temperature airflow.,flat base on bed
+Q02,120mm_usb_fan_bracket,M6 dry+QA,1,PETG,130.0,28.0,30.0,34.71,Holds a standard 120 mm USB fan above/beside trays. No heater required for R1.,flat base on bed
+Q03,camera_led_ring_plate,M6 dry+QA,1,PETG,78.0,62.0,6.0,19.01,Camera/LED ring plate for consistent defect-imaging illumination. Adapt center aperture to camera lens.,flat base on bed
+O01,finished_seedpod_tray_12,M7 output,2,PETG,160.0,120.0,14.0,120.19,Twelve isolated finished-carrier nests. Increase pocket diameter after measuring dry carrier envelope.,flat base on bed
+R01,gantry_tool_plate,M8 transfer,1,PETG,80.0,60.0,6.0,27.59,Universal plate for low-cost XY gantry or recycled 3D-printer carriage.,flat base on bed
+R02,sg90_gripper_body,M8 transfer,1,PETG,64.0,42.0,24.0,57.19,"SG90/MG90S body for transfer gripper. Grip only inactive tab/fixture, never squeeze active coil.",flat base on bed
+R03,soft_gripper_finger,M8 transfer,2,PETG+silicone,58.0,12.0,18.0,6.91,Pair of padded fingers for inactive handling tab or transfer fixture.,flat base on bed
+R04,vwheel_or_mgn12_carriage_adapter,M8 transfer,1,PETG,72.0,56.0,8.0,30.24,Generic adapter to a recycled Ender-style V-wheel carriage or MGN12 block.,flat base on bed
+R05,gt2_nema17_corner_mount,M8 transfer,2,PETG,70.0,46.0,64.0,39.54,Corner motor mount for optional XY transfer gantry. Use 2020 extrusion and GT2 belt; two motors if no donor printer.,flat base on bed
+R06,gt2_idler_corner_mount,M8 transfer,2,PETG,58.0,44.0,38.0,29.94,Adjustable idler mount for 5 mm bore GT2 idler. Tighten only enough to remove belt slack.,flat base on bed
+R07,xy_tool_carriage,M8 transfer,1,PETG,86.0,64.0,8.0,42.2,Tool carriage accepts R01. Adapt to V-wheel or MGN12 donor hardware.,flat base on bed
+R08,z_lift_servo_mount,M8 transfer,1,PETG,54.0,36.0,40.0,24.22,SG90/MG90S Z-lift mount for approximately 15-20 mm pickup travel. Keep end effector light.,flat base on bed
+Z01,fit_calibration_coupon,test,1,PETG,110.0,55.0,5.0,28.12,"Hole sizes for M2/M3/M4/M5, 8 mm rod and LM8UU; channel widths for wet veneer. Print before the rest of the system.",flat base on bed
+D01,four_cell_payload_cassette,drone payload,1,PETG,150.0,150.0,78.0,276.89,"Four isolated cells prevent tail entanglement. Payload only: use a purchased, flight-tested quadcopter frame.",flat base on bed
+D02,single_drop_door,drone payload,4,PETG,66.0,66.0,5.0,21.64,One door per cell. Use 3 mm metal hinge pin and retained metal servo linkage; bench-test fail-closed latch.,flat base on bed
+D03,payload_servo_mount,drone payload,4,PETG,44.0,32.0,32.0,14.46,SG90/MG90S mount outside cassette walls.,flat base on bed
+D04,payload_rail_adapter,drone payload,1,PETG prototype,150.0,100.0,4.0,53.69,Universal slotted payload plate. Do not use as motor/arm structure. Verify CG and landing gear clearance.,flat base on bed
+D05,pi_zero2w_companion_plate,drone payload,1,PETG,80.0,52.0,3.0,11.96,Pi Zero 2 W / small companion plate. Use Pi 5 only if heavier onboard vision is needed.,flat base on bed
+D06,downward_camera_mount,drone payload,1,PETG,52.0,40.0,32.0,19.38,Downward camera mount with lens opening; angle/height must be calibrated to ground sampling distance.,flat base on bed

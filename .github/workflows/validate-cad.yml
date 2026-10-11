@@ -1,0 +1,28 @@
+name: CAD QA
+on:
+  push:
+    branches: [main]
+    paths: ["hardware/**", "tools/build_cad.py", ".github/workflows/validate-cad.yml"]
+  pull_request:
+    paths: ["hardware/**", "tools/build_cad.py"]
+  workflow_dispatch:
+    inputs:
+      rebuild:
+        description: "Regenerate all CAD from source (slow) before QA"
+        type: boolean
+        default: false
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m pip install cadquery trimesh numpy
+      - name: Rebuild from source
+        if: ${{ inputs.rebuild }}
+        run: python tools/build_cad.py --fast
+      - name: Mesh QA (volume, watertight, bodies, A1 Mini envelope)
+        run: python tools/build_cad.py --qa-only
+      - uses: actions/upload-artifact@v4
+        with: { name: cad-qa-report, path: "hardware/cad/QA_REPORT.md" }

@@ -1,0 +1,12 @@
+# Normal Phase-1 cycle: home, wind 7 active + 1 sacrificial turns, vision accepts.
+set hb_period_ms 500
+set auto_vision_ok 1
+send HOME
+until READY 60000
+send SET_PITCH=4.084
+send SET_TURNS=7
+send SET_SACRIFICIAL=1
+send SET_RATE=30
+send START
+until COMPLETE 200000
+step 50

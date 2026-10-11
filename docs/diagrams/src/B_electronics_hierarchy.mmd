@@ -1,0 +1,19 @@
+flowchart TB
+  classDef host fill:#f3f5f7,stroke:#5b6b7a,color:#14273a
+  classDef safety fill:#e7f0ea,stroke:#2f6f4f,stroke-width:2px,color:#14273a
+  H["Host PC / Raspberry Pi<br/>vision QA, recipes, run logs<br/><small>python -m seedforge.host</small>"]:::host
+  CAM["USB board camera + LED back-light"]:::host
+  E["optional ESP32-C3 bridge<br/>USB-C, BLE, optional Wi-Fi, ILI9341 display<br/><small>not in the safety chain</small>"]:::host
+  U["Arduino Uno core controller<br/>Timer1 Bresenham step generator, FSM, limits, tension trip"]:::safety
+  D1["A4988 rotation -> NEMA17 -> mini chuck -> 0.8 mm mandrel"]
+  D2["A4988 linear -> NEMA17 -> T8x8 -> W11 carriage + guide"]
+  S["Sensors: HX711 load cell, dancer pot,<br/>home/end NC switches, E-stop rail sense, optional ICM-20948"]
+  P["PCA9685 -> servos: clamp, cutter, demold support"]
+  CAM --> H
+  H <-.->|"or USB / BLE / TCP via the bridge<br/>HEARTBEAT, VISION_OK, FAULT_*"| E
+  H <-->|"direct USB 115200 (budget default)"| U
+  E <-->|"UART 38400 (A1/A2, 1k/2k divider)"| U
+  U --> D1
+  U --> D2
+  S --> U
+  U -->|I2C| P

@@ -1,0 +1,38 @@
+subsystem,from,from_pin,to,to_pin,rail,notes
+Power,12 V 3 A certified adapter,barrel plug,DC barrel jack,5.5 x 2.1,12V,budget supply; check polarity (centre +) with a meter
+Power,DC barrel jack,+,Fuse 3 A,in,12V,"fuse first, before anything else"
+Power,DC barrel jack,-,Star ground block,GND,GND,single star point
+Power,Fuse 3 A,out,E-stop contact (NC),COM,12V,E-stop physically breaks the actuator rail
+Power,E-stop contact (NC),NC,Fuse 2 A (motors),in,12V_SW,
+Power,Fuse 2 A (motors),out,A4988 rotation / linear,VMOT,12V_SW,100 uF at each VMOT; set Vref before connecting motors
+Power,E-stop contact (NC),NC,Buck 12->5 V (LM2596),VIN+,12V_SW,servos lose power with the E-stop as well; set 5.0 V before connecting
+Power,Buck 12->5 V (LM2596),VOUT+,PCA9685,V+ (screw terminal),5V_SERVO,never feed from the Uno 5 V pin
+Power,Buck 12->5 V (LM2596),VOUT+,"ULN2003 boards, LED back-light strip",VCC,5V_SERVO,back-light could also run from USB
+Power,all module grounds,GND,Star ground block,GND,GND,Uno and ESP32 grounds join here once
+Logic power,PC / powered hub,USB,Arduino Uno,USB-B,5V_USB,development power
+Logic power,PC / powered hub,USB,ESP32-C3 (optional),USB-C,5V_USB,do not also back-feed its 5 V pin
+Safety,"12V_SW motor rail (VMOT node, after the E-stop and the 2 A fuse)",+,10 kOhm -> Uno D8; 4.7 kOhm D8 -> GND,D8,sense,Uno sees about 3.8 V while the rail is live; ESTOP_SENSE_RAIL=true in sf_config.h
+Winder,Uno,D2,A4988 rotation,STEP,5V_LOGIC,
+Winder,Uno,D3,A4988 rotation,DIR,5V_LOGIC,
+Winder,Uno,D4,A4988 linear,STEP,5V_LOGIC,
+Winder,Uno,D5,A4988 linear,DIR,5V_LOGIC,
+Winder,Uno,D6,A4988 rotation + linear,ENABLE,5V_LOGIC,"shared, active LOW, 10 k pull-up to 5 V"
+Winder,Uno,5V / GND,A4988 rotation + linear,VDD / GND,5V_LOGIC,RESET tied to SLEEP on each board
+Winder,A4988 (both),MS1/MS2/MS3,5 V,HIGH,5V_LOGIC,1/16 microstepping; firmware assumes 3200 usteps/rev
+Winder,A4988 rotation,1A/1B/2A/2B,NEMA17 rotation,coil A / coil B,12V_SW,keyed 4-pin connector; never unplug while powered
+Winder,A4988 linear,1A/1B/2A/2B,NEMA17 linear,coil A / coil B,12V_SW,
+Winder,Home microswitch (W14),C / NC,Uno,D9 / GND,5V_LOGIC,NC: a broken wire reads as 'actuated'
+Winder,End microswitch (W14),C / NC,Uno,D10 / GND,5V_LOGIC,
+Winder,START pushbutton,NO,Uno,D7 / GND,5V_LOGIC,
+Tension,Load cell,E+/E-/A+/A-,HX711,E+/E-/A+/A-,analog,short twisted leads
+Tension,HX711,VCC / GND,Uno,5V / GND,5V_LOGIC,
+Tension,HX711,DOUT / SCK,Uno,D11 / D12,5V_LOGIC,
+Tension,Dancer pot (F11),ends / wiper,Uno,"5V,GND / A0",5V_LOGIC,
+I2C,Uno,A4 / A5,"PCA9685, ICM-20948, MCP23017",SDA / SCL,5V_LOGIC,check each breakout's logic voltage
+I2C,Uno,5V / GND,PCA9685,VCC / GND,5V_LOGIC,logic only; servo power on V+
+Servos,PCA9685,CH0 / CH1 / CH6,clamp / cutter / demold-support servos,signal,PWM,M3
+Link,ESP32-C3,GPIO21 TX,Uno,A1,3.3V,38400 baud
+Link,Uno,A2,1 kOhm -> ESP32-C3 GPIO20 RX (2 kOhm to GND),,divided,
+Link,ESP32-C3,GND,Uno,GND,GND,
+UI,ESP32-C3,GPIO8/9/10/3/4/5,ILI9341,SCK/MISO/MOSI/CS/DC/RST,3.3V,VCC and LED to 3V3
+Vision,Host PC,USB,Camera,USB,data,frames stay on the host; only events go to the controller

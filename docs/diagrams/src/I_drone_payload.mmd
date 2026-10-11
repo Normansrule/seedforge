@@ -1,0 +1,15 @@
+flowchart TB
+  classDef concept fill:#ffffff,stroke:#9aa5b1,stroke-dasharray:5 4,color:#14273a
+  classDef fc fill:#f3f5f7,stroke:#5b6b7a,color:#14273a
+  GC["Ground coordinator (laptop)<br/>non-overlapping sectors + unique point IDs"]:::concept
+  FC["ArduPilot flight controller (budget: F405)<br/>stabilisation, geofence, failsafe, waypoints"]:::fc
+  PC["Payload controller (RP2040, ~$4)<br/>gate state machine, fail-closed"]:::concept
+  CAS["Four-cell cassette D01<br/>one carrier per cell, SG90 gates"]:::concept
+  IR["IR sensor per cell<br/>(release confirmation)"]:::concept
+  CC["Optional companion (Pi Zero 2 W + camera)<br/>terrain classification only"]:::concept
+  GC -->|"mission: waypoint = point ID"| FC
+  FC -->|"servo/relay output at waypoint"| PC
+  PC -->|"INTENT logged -> open one gate"| CAS
+  CAS --> IR -->|"cell empty?"| PC
+  PC -->|"RELEASED / UNCERTAIN (never auto-retried)"| GC
+  CC -.->|"MAVLink (optional)"| FC

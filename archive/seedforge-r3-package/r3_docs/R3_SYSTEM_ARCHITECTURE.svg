@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg{fill:#f7f9fb}.title{font:700 44px Arial;fill:#14324a}.sub{font:20px Arial;fill:#38566e}
+      .box{fill:#ffffff;stroke:#597a92;stroke-width:2;rx:18}.box2{fill:#eef5f8;stroke:#597a92;stroke-width:2;rx:18}
+      .power{fill:#fff5df;stroke:#a6761d;stroke-width:2;rx:18}.safe{fill:#ffecec;stroke:#b74b4b;stroke-width:2;rx:18}
+      .head{font:700 24px Arial;fill:#14324a}.txt{font:18px Arial;fill:#233945}.small{font:16px Arial;fill:#233945}
+      .arrow{stroke:#355b73;stroke-width:4;fill:none;marker-end:url(#m)}.pwr{stroke:#a6761d;stroke-width:4;fill:none;marker-end:url(#m2)}
+    </style>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 z" fill="#355b73"/></marker>
+    <marker id="m2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 z" fill="#a6761d"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text x="60" y="70" class="title">SeedForge R3 - Modular Control and Power Architecture</text>
+  <text x="60" y="105" class="sub">Build the core winder first. Add tail/assembly/transfer modules only after each acceptance gate passes.</text>
+
+  <rect x="60" y="160" width="300" height="190" class="power"/>
+  <text x="85" y="200" class="head">USB-C PD Power</text>
+  <text x="85" y="235" class="txt">65 W USB-C PD supply</text>
+  <text x="85" y="265" class="txt">PD trigger -> 20 V</text>
+  <text x="85" y="295" class="txt">20 V -> 12 V buck</text>
+  <text x="85" y="325" class="txt">12 V -> 5 V buck</text>
+
+  <rect x="60" y="390" width="300" height="170" class="safe"/>
+  <text x="85" y="430" class="head">Physical Safety Path</text>
+  <text x="85" y="465" class="txt">E-stop + fuse</text>
+  <text x="85" y="495" class="txt">interrupt actuator power</text>
+  <text x="85" y="525" class="small">Software stop is supplementary.</text>
+
+  <rect x="500" y="150" width="350" height="220" class="box2"/>
+  <text x="525" y="192" class="head">Arduino Uno - Core Controller</text>
+  <text x="525" y="228" class="txt">DDA/Bresenham step timing</text>
+  <text x="525" y="258" class="txt">FSM + limits + E-stop feedback</text>
+  <text x="525" y="288" class="txt">HX711 tension input</text>
+  <text x="525" y="318" class="txt">IMU vibration supervisor</text>
+  <text x="525" y="348" class="small">Must fail safe if ESP32/host disappears.</text>
+
+  <rect x="500" y="430" width="350" height="190" class="box"/>
+  <text x="525" y="472" class="head">ESP32-C3 - Communications/UI</text>
+  <text x="525" y="508" class="txt">USB-C programming/power</text>
+  <text x="525" y="538" class="txt">BLE/Wi-Fi bridge</text>
+  <text x="525" y="568" class="txt">ILI9341 state display</text>
+  <text x="525" y="598" class="small">3.3 V UART; level-shift Uno TX.</text>
+
+  <rect x="1010" y="150" width="270" height="190" class="box"/>
+  <text x="1035" y="192" class="head">Winder Actuators</text>
+  <text x="1035" y="228" class="txt">A4988 #1 -> NEMA17</text>
+  <text x="1035" y="258" class="txt">rotation / 0.8 mm mandrel</text>
+  <text x="1035" y="298" class="txt">A4988 #2 -> NEMA17</text>
+  <text x="1035" y="328" class="txt">T8x8 translation axis</text>
+
+  <rect x="1010" y="390" width="270" height="190" class="box"/>
+  <text x="1035" y="432" class="head">Sensors</text>
+  <text x="1035" y="468" class="txt">Load cell + HX711</text>
+  <text x="1035" y="498" class="txt">ICM-20948 IMU</text>
+  <text x="1035" y="528" class="txt">NC home/end limits</text>
+  <text x="1035" y="558" class="txt">optional dancer position</text>
+
+  <rect x="1320" y="150" width="230" height="190" class="box2"/>
+  <text x="1345" y="192" class="head">Vision Host</text>
+  <text x="1345" y="228" class="txt">RealSense / USB camera</text>
+  <text x="1345" y="258" class="txt">fixed illumination</text>
+  <text x="1345" y="298" class="small">Sends events:</text>
+  <text x="1345" y="325" class="small">VISION_OK / FAULT_*</text>
+
+  <rect x="1010" y="650" width="540" height="170" class="box"/>
+  <text x="1035" y="692" class="head">Later Modules - only after core winder passes</text>
+  <text x="1035" y="730" class="txt">PCA9685 -> clamp/cutter/tail/transfer servos</text>
+  <text x="1035" y="760" class="txt">MCP23017 + ULN2003 -> seed indexer + syringe stepper</text>
+  <text x="1035" y="790" class="txt">Optional XY gantry -> station-to-station transfer</text>
+
+  <path d="M360 255 L500 255" class="pwr"/>
+  <path d="M360 470 L500 300" class="pwr"/>
+  <path d="M850 250 L1010 250" class="arrow"/>
+  <path d="M1010 490 L850 310" class="arrow"/>
+  <path d="M675 370 L675 430" class="arrow"/>
+  <path d="M850 525 L1320 245" class="arrow"/>
+  <path d="M1280 245 L1320 245" class="arrow"/>
+  <path d="M850 525 L1010 735" class="arrow"/>
+
+  <text x="365" y="240" class="small">12 V / 5 V rails</text>
+  <text x="875" y="235" class="small">STEP/DIR</text>
+  <text x="865" y="490" class="small">I2C / digital inputs</text>
+  <text x="700" y="408" class="small">UART events</text>
+</svg>

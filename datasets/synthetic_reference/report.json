@@ -1,0 +1,275 @@
+{
+  "data": "SYNTHETIC images - not validation evidence for real veneer",
+  "n": 16,
+  "true_accept": 6,
+  "true_reject": 10,
+  "false_accept": 0,
+  "false_reject": 0,
+  "rejects_with_expected_fault_code": 10,
+  "thresholds": {
+    "px_per_mm": 40.0,
+    "strip_w_mm": 2.5,
+    "strip_t_mm": 0.5,
+    "mandrel_d_mm": 0.8,
+    "expected_pitch_mm": 5.0,
+    "expected_turns": 7.0,
+    "pitch_tol_frac": 0.15,
+    "turns_tol": 0.5,
+    "max_gap_mm": 1.6,
+    "max_overlap_mm": 0.4,
+    "max_axis_sag_mm": 0.5,
+    "min_body_area_px": 2000
+  },
+  "rows": [
+    {
+      "image": "synthetic_00_good.png",
+      "label": "good",
+      "expected": "VISION_OK",
+      "ok": true,
+      "event": "VISION_OK",
+      "reasons": [],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.010448021338303448
+    },
+    {
+      "image": "synthetic_01_good.png",
+      "label": "good",
+      "expected": "VISION_OK",
+      "ok": true,
+      "event": "VISION_OK",
+      "reasons": [],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.010246336988792137
+    },
+    {
+      "image": "synthetic_02_good.png",
+      "label": "good",
+      "expected": "VISION_OK",
+      "ok": true,
+      "event": "VISION_OK",
+      "reasons": [],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.01023177005977587
+    },
+    {
+      "image": "synthetic_03_good.png",
+      "label": "good",
+      "expected": "VISION_OK",
+      "ok": true,
+      "event": "VISION_OK",
+      "reasons": [],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.010212101245924999
+    },
+    {
+      "image": "synthetic_04_good.png",
+      "label": "good",
+      "expected": "VISION_OK",
+      "ok": true,
+      "event": "VISION_OK",
+      "reasons": [],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.01024738480526679
+    },
+    {
+      "image": "synthetic_05_good.png",
+      "label": "good",
+      "expected": "VISION_OK",
+      "ok": true,
+      "event": "VISION_OK",
+      "reasons": [],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.010421275351911419
+    },
+    {
+      "image": "synthetic_06_gap.png",
+      "label": "gap",
+      "expected": "FAULT_GAP",
+      "ok": false,
+      "event": "FAULT_GAP",
+      "reasons": [
+        "gap 3.57 mm > 1.60 mm (max local pitch 7.53 mm, see-through 0.00 mm)",
+        "turn count 7.64 vs expected 7.0"
+      ],
+      "length_mm": 38.375,
+      "pitch_mm": 5.025,
+      "turns": 7.63681592039801,
+      "max_gap_mm": 3.5730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.013178473890165776
+    },
+    {
+      "image": "synthetic_07_gap.png",
+      "label": "gap",
+      "expected": "FAULT_GAP",
+      "ok": false,
+      "event": "FAULT_GAP",
+      "reasons": [
+        "gap 4.47 mm > 1.60 mm (max local pitch 8.43 mm, see-through 0.00 mm)",
+        "turn count 7.84 vs expected 7.0"
+      ],
+      "length_mm": 39.375,
+      "pitch_mm": 5.025,
+      "turns": 7.835820895522388,
+      "max_gap_mm": 4.47307477491241,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.014862805137291702
+    },
+    {
+      "image": "synthetic_08_gap.png",
+      "label": "gap",
+      "expected": "FAULT_GAP",
+      "ok": false,
+      "event": "FAULT_GAP",
+      "reasons": [
+        "gap 5.37 mm > 1.60 mm (max local pitch 9.32 mm, see-through 0.00 mm)",
+        "turn count 8.03 vs expected 7.0"
+      ],
+      "length_mm": 40.375,
+      "pitch_mm": 5.025,
+      "turns": 8.034825870646765,
+      "max_gap_mm": 5.373074774912409,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.01675976100595449
+    },
+    {
+      "image": "synthetic_09_overlap.png",
+      "label": "overlap",
+      "expected": "FAULT_OVERLAP",
+      "ok": false,
+      "event": "FAULT_OVERLAP",
+      "reasons": [
+        "estimated overlap 0.50 mm > 0.40 mm (min local pitch 3.65 mm, edge bulge 0.50 mm)",
+        "turn count 6.1 vs expected 7.0"
+      ],
+      "length_mm": 30.525,
+      "pitch_mm": 5.0,
+      "turns": 6.1049999999999995,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.5027822521483516,
+      "axis_sag_mm": 0.013287759804348553
+    },
+    {
+      "image": "synthetic_10_overlap.png",
+      "label": "overlap",
+      "expected": "FAULT_OVERLAP",
+      "ok": false,
+      "event": "FAULT_OVERLAP",
+      "reasons": [
+        "estimated overlap 0.50 mm > 0.40 mm (min local pitch 3.62 mm, edge bulge 0.50 mm)",
+        "turn count 6.03 vs expected 7.0"
+      ],
+      "length_mm": 30.15,
+      "pitch_mm": 5.0,
+      "turns": 6.029999999999999,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.5029827573937755,
+      "axis_sag_mm": 0.013360284621114715
+    },
+    {
+      "image": "synthetic_11_overlap.png",
+      "label": "overlap",
+      "expected": "FAULT_OVERLAP",
+      "ok": false,
+      "event": "FAULT_OVERLAP",
+      "reasons": [
+        "estimated overlap 0.50 mm > 0.40 mm (min local pitch 3.55 mm, edge bulge 0.50 mm)",
+        "turn count 5.95 vs expected 7.0"
+      ],
+      "length_mm": 29.75,
+      "pitch_mm": 5.0,
+      "turns": 5.95,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.5030238068264936,
+      "axis_sag_mm": 0.012701529125401834
+    },
+    {
+      "image": "synthetic_12_length.png",
+      "label": "length",
+      "expected": "FAULT_LENGTH",
+      "ok": false,
+      "event": "FAULT_LENGTH",
+      "reasons": [
+        "turn count 5.08 vs expected 7.0"
+      ],
+      "length_mm": 25.4,
+      "pitch_mm": 5.0,
+      "turns": 5.08,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.015625299493807178
+    },
+    {
+      "image": "synthetic_13_length.png",
+      "label": "length",
+      "expected": "FAULT_LENGTH",
+      "ok": false,
+      "event": "FAULT_LENGTH",
+      "reasons": [
+        "turn count 5.58 vs expected 7.0"
+      ],
+      "length_mm": 27.9,
+      "pitch_mm": 5.0,
+      "turns": 5.58,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 3.992643369556959e-05
+    },
+    {
+      "image": "synthetic_14_deformed.png",
+      "label": "deformed",
+      "expected": "FAULT_LENGTH",
+      "ok": false,
+      "event": "FAULT_LENGTH",
+      "reasons": [
+        "gross deformation: axis sag 0.73 mm > 0.5 mm"
+      ],
+      "length_mm": 35.4,
+      "pitch_mm": 5.0,
+      "turns": 7.08,
+      "max_gap_mm": 1.0980747749124098,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.7296208060810017
+    },
+    {
+      "image": "synthetic_15_deformed.png",
+      "label": "deformed",
+      "expected": "FAULT_LENGTH",
+      "ok": false,
+      "event": "FAULT_LENGTH",
+      "reasons": [
+        "gross deformation: axis sag 0.97 mm > 0.5 mm"
+      ],
+      "length_mm": 35.375,
+      "pitch_mm": 5.0,
+      "turns": 7.075,
+      "max_gap_mm": 1.0730747749124103,
+      "overlap_est_mm": 0.0,
+      "axis_sag_mm": 0.9743998720670547
+    }
+  ]
+}

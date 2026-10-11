@@ -1,0 +1,23 @@
+sequenceDiagram
+  autonumber
+  participant H as Host (vision + logs)
+  participant E as ESP32-C3 bridge
+  participant U as Uno controller
+  H->>E: SET_PITCH=5.000 ... SET_TURNS=7
+  E->>U: (forwarded line by line)
+  U-->>H: OK=SET_PITCH ...
+  H->>U: START
+  U-->>H: STATE=HOME, HOME_ERROR_MM=0.00, STATE=PRETENSION
+  loop every 500 ms while winding/verifying
+    H->>U: HEARTBEAT
+  end
+  U-->>H: STATE=WIND, TURN=1 ... TURN=8
+  U-->>H: EVENT=WIND_DONE, STATE=VERIFY
+  H->>H: capture + deterministic QA
+  alt coil accepted
+    H->>U: LENGTH_MM=35.38, VISION_OK
+    U-->>H: STATE=COMPLETE, COMPLETE turns=8 lin_steps=16000 ...
+  else defect / camera fault / host silent
+    H->>U: FAULT_GAP (or no HEARTBEAT for 3 s)
+    U-->>H: FAULT=VISION_GAP, STATE=SAFE_STOP
+  end

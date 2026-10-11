@@ -1,0 +1,23 @@
+name: Docs
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m pip install -e ".[dev]"
+      - name: Broken relative links and anchors
+        run: python tools/check_links.py
+      - name: Generated tables are up to date (BOM, wiring, schematic, module docs)
+        run: |
+          python tools/build_bom.py
+          python tools/build_wiring.py
+          python tools/build_schematic.py
+          python tools/build_module_docs.py
+          git diff --exit-code -- hardware/bom hardware/wiring hardware/electronics/*.svg docs/modules docs/diagrams/D_arduino_pin_map.svg
+      - name: Website data builds
+        run: python tools/build_site_data.py

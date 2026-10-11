@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 792" font-family="Inter, Helvetica, Arial, sans-serif">
+<rect width="1200" height="792" fill="#ffffff"/>
+<text x="40" y="52" font-size="26" font-weight="700" fill="#14273a">Arduino Uno pin map (SeedForge R3.1 core controller)</text>
+<text x="40" y="82" font-size="15" fill="#5b6b7a">Source: tools/build_wiring.py. Inputs are NC-to-GND with INPUT_PULLUP: an open wire reads as unsafe.</text>
+<rect x="40" y="100" width="190" height="642" rx="12" fill="#14273a"/>
+<text x="135" y="762" text-anchor="middle" font-size="14" fill="#fff">ATmega328P</text>
+<rect x="200" y="108" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="125" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D2</text>
+<line x1="260" y1="120" x2="300" y2="120" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="107" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="125" font-size="14" font-weight="600" fill="#14273a">ROT_STEP</text>
+<text x="485" y="125" font-size="14" fill="#14273a">A4988 rotation STEP</text>
+<text x="485" y="139" font-size="11" fill="#5b6b7a">5 V output, PORTD2 (ISR)</text>
+<rect x="200" y="142" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="159" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D3</text>
+<line x1="260" y1="154" x2="300" y2="154" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="141" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="159" font-size="14" font-weight="600" fill="#14273a">ROT_DIR</text>
+<text x="485" y="159" font-size="14" fill="#14273a">A4988 rotation DIR</text>
+<text x="485" y="173" font-size="11" fill="#5b6b7a">5 V output</text>
+<rect x="200" y="176" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="193" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D4</text>
+<line x1="260" y1="188" x2="300" y2="188" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="175" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="193" font-size="14" font-weight="600" fill="#14273a">LIN_STEP</text>
+<text x="485" y="193" font-size="14" fill="#14273a">A4988 linear STEP</text>
+<text x="485" y="207" font-size="11" fill="#5b6b7a">5 V output, PORTD4 (ISR)</text>
+<rect x="200" y="210" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="227" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D5</text>
+<line x1="260" y1="222" x2="300" y2="222" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="209" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="227" font-size="14" font-weight="600" fill="#14273a">LIN_DIR</text>
+<text x="485" y="227" font-size="14" fill="#14273a">A4988 linear DIR</text>
+<text x="485" y="241" font-size="11" fill="#5b6b7a">5 V output</text>
+<rect x="200" y="244" width="60" height="24" rx="4" fill="#ffffff" stroke="#2f6f4f" stroke-width="2"/>
+<text x="230" y="261" text-anchor="middle" font-size="14" font-weight="700" fill="#2f6f4f">D6</text>
+<line x1="260" y1="256" x2="300" y2="256" stroke="#2f6f4f" stroke-width="2"/>
+<rect x="300" y="243" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="261" font-size="14" font-weight="600" fill="#14273a">A4988_ENABLE</text>
+<text x="485" y="261" font-size="14" fill="#14273a">both A4988 ENABLE</text>
+<text x="485" y="275" font-size="11" fill="#5b6b7a">active LOW; 10 kOhm pull-up to 5 V keeps drivers off during reset</text>
+<rect x="200" y="278" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="295" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D7</text>
+<line x1="260" y1="290" x2="300" y2="290" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="277" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="295" font-size="14" font-weight="600" fill="#14273a">START</text>
+<text x="485" y="295" font-size="14" fill="#14273a">pushbutton to GND</text>
+<text x="485" y="309" font-size="11" fill="#5b6b7a">INPUT_PULLUP; BOOT=home, READY=start, moving=stop, SAFE_STOP=reset</text>
+<rect x="200" y="312" width="60" height="24" rx="4" fill="#ffffff" stroke="#2f6f4f" stroke-width="2"/>
+<text x="230" y="329" text-anchor="middle" font-size="14" font-weight="700" fill="#2f6f4f">D8</text>
+<line x1="260" y1="324" x2="300" y2="324" stroke="#2f6f4f" stroke-width="2"/>
+<rect x="300" y="311" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="329" font-size="14" font-weight="600" fill="#14273a">ESTOP_FB</text>
+<text x="485" y="329" font-size="14" fill="#14273a">switched 12 V rail via 10 kOhm (top) / 4.7 kOhm (to GND) divider</text>
+<text x="485" y="343" font-size="11" fill="#5b6b7a">INPUT; about 3.8 V = rail present = safe; LOW = E-stop pressed, fuse blown or wire broken</text>
+<rect x="200" y="346" width="60" height="24" rx="4" fill="#ffffff" stroke="#2f6f4f" stroke-width="2"/>
+<text x="230" y="363" text-anchor="middle" font-size="14" font-weight="700" fill="#2f6f4f">D9</text>
+<line x1="260" y1="358" x2="300" y2="358" stroke="#2f6f4f" stroke-width="2"/>
+<rect x="300" y="345" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="363" font-size="14" font-weight="600" fill="#14273a">HOME</text>
+<text x="485" y="363" font-size="14" fill="#14273a">home microswitch NC to GND</text>
+<text x="485" y="377" font-size="11" fill="#5b6b7a">INPUT_PULLUP; HIGH = actuated or broken wire</text>
+<rect x="200" y="380" width="60" height="24" rx="4" fill="#ffffff" stroke="#2f6f4f" stroke-width="2"/>
+<text x="230" y="397" text-anchor="middle" font-size="14" font-weight="700" fill="#2f6f4f">D10</text>
+<line x1="260" y1="392" x2="300" y2="392" stroke="#2f6f4f" stroke-width="2"/>
+<rect x="300" y="379" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="397" font-size="14" font-weight="600" fill="#14273a">END</text>
+<text x="485" y="397" font-size="14" fill="#14273a">end microswitch NC to GND</text>
+<text x="485" y="411" font-size="11" fill="#5b6b7a">INPUT_PULLUP; HIGH = actuated or broken wire</text>
+<rect x="200" y="414" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="431" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D11</text>
+<line x1="260" y1="426" x2="300" y2="426" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="413" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="431" font-size="14" font-weight="600" fill="#14273a">HX711_DOUT</text>
+<text x="485" y="431" font-size="14" fill="#14273a">HX711 DOUT</text>
+<text x="485" y="445" font-size="11" fill="#5b6b7a">check the breakout's VDD/VCC: run HX711 logic at 5 V</text>
+<rect x="200" y="448" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="465" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D12</text>
+<line x1="260" y1="460" x2="300" y2="460" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="447" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="465" font-size="14" font-weight="600" fill="#14273a">HX711_SCK</text>
+<text x="485" y="465" font-size="14" fill="#14273a">HX711 SCK</text>
+<text x="485" y="479" font-size="11" fill="#5b6b7a">output</text>
+<rect x="200" y="482" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="499" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">D13</text>
+<line x1="260" y1="494" x2="300" y2="494" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="481" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="499" font-size="14" font-weight="600" fill="#14273a">STATUS_LED</text>
+<text x="485" y="499" font-size="14" fill="#14273a">on-board LED</text>
+<text x="485" y="513" font-size="11" fill="#5b6b7a">solid = SAFE_STOP; never the only safety indication</text>
+<rect x="200" y="516" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="533" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">A0</text>
+<line x1="260" y1="528" x2="300" y2="528" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="515" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="533" font-size="14" font-weight="600" fill="#14273a">DANCER</text>
+<text x="485" y="533" font-size="14" fill="#14273a">10 kOhm pot wiper (F11)</text>
+<text x="485" y="547" font-size="11" fill="#5b6b7a">0-5 V; pot ends to 5 V and GND</text>
+<rect x="200" y="550" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="567" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">A1</text>
+<line x1="260" y1="562" x2="300" y2="562" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="549" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="567" font-size="14" font-weight="600" fill="#14273a">LINK_RX</text>
+<text x="485" y="567" font-size="14" fill="#14273a">ESP32-C3 GPIO21 (D6) TX</text>
+<text x="485" y="581" font-size="11" fill="#5b6b7a">3.3 V into 5 V input is read as HIGH</text>
+<rect x="200" y="584" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="601" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">A2</text>
+<line x1="260" y1="596" x2="300" y2="596" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="583" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="601" font-size="14" font-weight="600" fill="#14273a">LINK_TX</text>
+<text x="485" y="601" font-size="14" fill="#14273a">1 kOhm -> ESP32-C3 GPIO20 (D7) RX; 2 kOhm to GND</text>
+<text x="485" y="615" font-size="11" fill="#5b6b7a">divider makes ~3.3 V; never drive the C3 with 5 V</text>
+<rect x="200" y="618" width="60" height="24" rx="4" fill="#ffffff" stroke="#2f6f4f" stroke-width="2"/>
+<text x="230" y="635" text-anchor="middle" font-size="14" font-weight="700" fill="#2f6f4f">A3</text>
+<line x1="260" y1="630" x2="300" y2="630" stroke="#2f6f4f" stroke-width="2"/>
+<rect x="300" y="617" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="635" font-size="14" font-weight="600" fill="#14273a">GUARD</text>
+<text x="485" y="635" font-size="14" fill="#14273a">cutter-guard NC switch to GND (optional)</text>
+<text x="485" y="649" font-size="11" fill="#5b6b7a">set GUARD_FITTED=true in the sketch when wired</text>
+<rect x="200" y="652" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="669" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">A4</text>
+<line x1="260" y1="664" x2="300" y2="664" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="651" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="669" font-size="14" font-weight="600" fill="#14273a">I2C_SDA</text>
+<text x="485" y="669" font-size="14" fill="#14273a">PCA9685 0x40, ICM-20948 0x69, MCP23017 0x20</text>
+<text x="485" y="683" font-size="11" fill="#5b6b7a">check module pull-up voltage; 3.3 V-only modules need a level shifter</text>
+<rect x="200" y="686" width="60" height="24" rx="4" fill="#ffffff" stroke="#14273a" stroke-width="2"/>
+<text x="230" y="703" text-anchor="middle" font-size="14" font-weight="700" fill="#14273a">A5</text>
+<line x1="260" y1="698" x2="300" y2="698" stroke="#14273a" stroke-width="2"/>
+<rect x="300" y="685" width="170" height="26" rx="4" fill="#e9ecef"/>
+<text x="310" y="703" font-size="14" font-weight="600" fill="#14273a">I2C_SCL</text>
+<text x="485" y="703" font-size="14" fill="#14273a">same bus</text>
+<text x="485" y="717" font-size="11" fill="#5b6b7a">400 kHz</text>
+<rect x="40" y="754" width="14" height="14" fill="#2f6f4f"/>
+<text x="62" y="766" font-size="13" fill="#5b6b7a">safety-related input/output (software supplement only - the E-stop contact breaks actuator power)</text>
+</svg>

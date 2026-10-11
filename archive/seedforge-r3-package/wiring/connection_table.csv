@@ -1,0 +1,95 @@
+subsystem,from_device,from_pin,to_device,to_pin,signal,rail,notes
+Factory power,USB-C PD supply,USB-C,PD trigger,USB-C,20 V negotiated power,20V,Use 5 A-capable cable if supply requires it.
+Factory power,PD trigger,20V OUT+,12V buck,VIN+,DC input,20V,
+Factory power,PD trigger,GND,12V buck,VIN-,DC return,GND,
+Factory power,12V buck,12V OUT+,E-stop NC contact,COM,actuator power,12V,"E-stop removes motion/cutter power, logic can remain alive."
+Factory power,E-stop NC contact,NC,12V actuator bus,+,switched actuator rail,12V_SW,
+Factory power,12V buck,GND,actuator ground bus,-,common return,GND,
+Factory power,12V actuator bus,+,A4988 ROT,VMOT,rotation motor power,12V_SW,Place >=100 uF electrolytic at VMOT/GND.
+Factory power,12V actuator bus,+,A4988 LIN,VMOT,linear motor power,12V_SW,Place >=100 uF electrolytic at VMOT/GND.
+Factory power,12V actuator bus,+,5V buck,VIN+,servo/aux supply input,12V_SW,
+Factory power,actuator ground bus,-,5V buck,VIN-,return,GND,
+Factory power,5V buck,5V OUT+,servo/aux 5V bus,+,servo/aux power,5V_SERVO,
+Factory power,5V buck,GND,servo/aux ground bus,-,return,GND,
+Factory logic,Powered USB hub,USB-A,Arduino Uno,USB-B,logic power + debug,5V_USB,Do not simultaneously feed Uno 5V pin from servo rail.
+Factory logic,Powered USB hub,USB-A,ESP32-C3,USB-C,logic power + host data,5V_USB,
+Factory logic,Arduino Uno,GND,actuator ground bus,-,logic reference,GND,Single-point signal ground connection.
+Winder,Arduino Uno,D2,A4988 ROT,STEP,ROT_STEP,5V_LOGIC,
+Winder,Arduino Uno,D3,A4988 ROT,DIR,ROT_DIR,5V_LOGIC,
+Winder,Arduino Uno,D6,A4988 ROT,ENABLE,STEPPER_ENABLE,5V_LOGIC,"Shared enable, active LOW."
+Winder,Arduino Uno,5V,A4988 ROT,VDD,driver logic,5V_LOGIC,
+Winder,Arduino Uno,5V,A4988 ROT,RESET,reset high,5V_LOGIC,
+Winder,Arduino Uno,5V,A4988 ROT,SLEEP,awake high,5V_LOGIC,
+Winder,Arduino Uno,GND,A4988 ROT,GND,logic ground,GND,
+Winder,Arduino Uno,D4,A4988 LIN,STEP,LIN_STEP,5V_LOGIC,
+Winder,Arduino Uno,D5,A4988 LIN,DIR,LIN_DIR,5V_LOGIC,
+Winder,Arduino Uno,D6,A4988 LIN,ENABLE,STEPPER_ENABLE,5V_LOGIC,"Shared enable, active LOW."
+Winder,Arduino Uno,5V,A4988 LIN,VDD,driver logic,5V_LOGIC,
+Winder,Arduino Uno,5V,A4988 LIN,RESET,reset high,5V_LOGIC,
+Winder,Arduino Uno,5V,A4988 LIN,SLEEP,awake high,5V_LOGIC,
+Winder,Arduino Uno,GND,A4988 LIN,GND,logic ground,GND,
+Winder,A4988 ROT,1A/1B/2A/2B,NEMA17 rotation,coils,bipolar phases,12V_SW,Identify motor coil pairs before connection.
+Winder,A4988 LIN,1A/1B/2A/2B,NEMA17 linear,coils,bipolar phases,12V_SW,Identify motor coil pairs before connection.
+Winder,Linear home microswitch,NC,Arduino Uno,D10,home input,5V_LOGIC,Use INPUT_PULLUP; switch to GND.
+Winder,Linear end microswitch,NC,Arduino Uno,D11,end input,5V_LOGIC,Use INPUT_PULLUP; switch to GND.
+Sensors,HC-SR04,TRIG,Arduino Uno,D7,ultrasonic trigger,5V_LOGIC,
+Sensors,HC-SR04,ECHO,Arduino Uno,D8,ultrasonic echo,5V_LOGIC,
+Sensors,HX711,DOUT,Arduino Uno,A0/D14,tension data,5V_LOGIC,
+Sensors,HX711,SCK,Arduino Uno,A1/D15,tension clock,5V_LOGIC,
+Sensors,Dancer potentiometer,wiper,Arduino Uno,A2,dancer position,0-5V,
+Safety,E-stop auxiliary contact,NC,Arduino Uno,D9,E_STOP_SENSE,5V_LOGIC,Software status only; power contact performs actual actuator interruption.
+I2C,Arduino Uno,A4/SDA,ICM-20948,SDA,I2C data,5V_LOGIC,Confirm breakout voltage compatibility; address 0x68/0x69.
+I2C,Arduino Uno,A5/SCL,ICM-20948,SCL,I2C clock,5V_LOGIC,
+I2C,Arduino Uno,GND,ICM-20948,GND,ground,GND,
+I2C,Arduino Uno,A4/SDA,PCA9685,SDA,I2C data,5V_LOGIC,Confirm breakout voltage compatibility; address 0x40.
+I2C,Arduino Uno,A5/SCL,PCA9685,SCL,I2C clock,5V_LOGIC,
+I2C,Arduino Uno,GND,PCA9685,GND,ground,GND,
+I2C,Arduino Uno,A4/SDA,MCP23017,SDA,I2C data,5V_LOGIC,Confirm breakout voltage compatibility; address 0x20.
+I2C,Arduino Uno,A5/SCL,MCP23017,SCL,I2C clock,5V_LOGIC,
+I2C,Arduino Uno,GND,MCP23017,GND,ground,GND,
+I2C,Arduino Uno,5V,PCA9685,VCC,logic supply,5V_LOGIC,
+Servos,5V servo bus,+,PCA9685,V+,servo power,5V_SERVO,Do not power servos from Uno 5V.
+Servos,PCA9685,CH0,Clamp servo,signal,clamp command,PWM,
+Servos,PCA9685,CH1,Cutter servo,signal,cutter command,PWM,
+Servos,PCA9685,CH2,Tail sweep servo,signal,tail form command,PWM,
+Servos,PCA9685,CH3,Tail clamp servo,signal,tail clamp,PWM,
+Servos,PCA9685,CH4,Transfer gripper servo,signal,gripper command,PWM,
+Servos,PCA9685,CH5,Transfer Z servo,signal,Z lift,PWM,
+Aux steppers,MCP23017,GPA0,ULN2003 seed,IN1,seed index phase,5V_LOGIC,
+Aux steppers,MCP23017,GPA1,ULN2003 seed,IN2,seed index phase,5V_LOGIC,
+Aux steppers,MCP23017,GPA2,ULN2003 seed,IN3,seed index phase,5V_LOGIC,
+Aux steppers,MCP23017,GPA3,ULN2003 seed,IN4,seed index phase,5V_LOGIC,
+Aux steppers,MCP23017,GPB0,ULN2003 syringe,IN1,syringe phase,5V_LOGIC,
+Aux steppers,MCP23017,GPB1,ULN2003 syringe,IN2,syringe phase,5V_LOGIC,
+Aux steppers,MCP23017,GPB2,ULN2003 syringe,IN3,syringe phase,5V_LOGIC,
+Aux steppers,MCP23017,GPB3,ULN2003 syringe,IN4,syringe phase,5V_LOGIC,
+Aux steppers,5V servo bus,+,ULN2003 seed,VCC,seed motor power,5V_SERVO,
+Aux steppers,5V servo bus,+,ULN2003 syringe,VCC,syringe motor power,5V_SERVO,
+Aux steppers,ULN2003 seed,motor socket,28BYJ seed indexer,5-wire,seed indexing,5V_SERVO,
+Aux steppers,ULN2003 syringe,motor socket,28BYJ syringe,5-wire,glue dispensing,5V_SERVO,
+Display,Arduino Uno,D13/SCK,ILI9341,SCK,SPI clock,5V_LOGIC,Many ILI9341 breakouts are 3.3 V logic only; verify your sponsored module. Use level shifting if required.
+Display,Arduino Uno,D11/MOSI,ILI9341,MOSI,SPI data,5V_LOGIC,
+Display,Arduino Uno,D12/MISO,ILI9341,MISO,SPI data,5V_LOGIC,Only needed if display/touch reads data back.
+Display,Arduino Uno,D10,ILI9341,CS,chip select,5V_LOGIC,
+Display,Arduino Uno,A3/D17,ILI9341,DC,data/command,5V_LOGIC,
+Display,Arduino Uno,RESET,ILI9341,RST,reset,5V_LOGIC,Tie TFT RST to the Uno RESET net. Do not share ultrasonic D8.
+Communications,ESP32-C3,TX 3.3V,Arduino Uno,D0/RX,vision command UART,3.3V UART,3.3 V high is normally read as HIGH by Uno.
+Communications,Arduino Uno,D1/TX,ESP32-C3,RX,status UART,level-shifted,Use 2-resistor divider or level shifter; disconnect both UART jumpers when uploading to Uno.
+Communications,ESP32-C3,GND,Arduino Uno,GND,UART reference,GND,
+Communications,Vision host / laptop,BLE or Wi-Fi,ESP32-C3,BLE/Wi-Fi,"FAULT, LENGTH, HEARTBEAT",wireless,"Send events, not raw camera frames, to the Uno."
+Drone power,4S LiPo,XT60,Power distribution,BAT,propulsion power,4S,Use purchased fused/connectorized distribution.
+Drone power,Power distribution,ESC outputs,4x ESC,VIN,motor power,4S,
+Drone power,4x ESC,3-phase,4x brushless motor,phases,motor drive,3-phase,
+Drone power,4S LiPo,fused aux,5V BEC Pi,VIN,companion power,4S,
+Drone power,4S LiPo,fused aux,5V BEC servo,VIN,payload power,4S,
+Drone companion,5V BEC Pi,5V,Pi Zero 2 W,5V/GND,companion supply,5V,Do not back-power through USB simultaneously.
+Drone payload,5V BEC servo,5V,PCA9685 payload,V+,gate servo power,5V,
+Drone payload,Pi Zero 2 W,USB/UART,RP2040 payload MCU,USB/UART,release command,data,Payload MCU applies inhibit and cell state checks.
+Drone payload,RP2040 payload MCU,I2C SDA/SCL,PCA9685 payload,SDA/SCL,gate PWM control,3.3V logic,
+Drone payload,PCA9685 payload,CH0,Gate servo 1,signal,gate_1,PWM,
+Drone payload,PCA9685 payload,CH1,Gate servo 2,signal,gate_2,PWM,
+Drone payload,PCA9685 payload,CH2,Gate servo 3,signal,gate_3,PWM,
+Drone payload,PCA9685 payload,CH3,Gate servo 4,signal,gate_4,PWM,
+Drone vision,Downward camera,CSI/USB,Pi Zero 2 W,camera,terrain imagery,data,
+Drone nav,Flight controller,TELEM/UART,Pi Zero 2 W,UART/USB,MAVLink position/mission,3.3V UART,Use only a documented port pinout for the selected flight controller.
+Drone swarm,Ground coordinator,telemetry/Wi-Fi,Pi Zero 2 W,network,sector assignment + drop ledger,wireless,"Each drone receives non-overlapping polygons; if link is lost, it does not enter another drone's sector."

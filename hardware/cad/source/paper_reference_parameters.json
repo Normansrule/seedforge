@@ -1,0 +1,42 @@
+{
+  "paper_standard_reference": {
+    "tails": 3,
+    "coil_layers": 1,
+    "coil_turns": 7,
+    "coil_axial_length_mm": 35.0,
+    "mandrel_diameter_mm": 0.8,
+    "ribbon_width_mm": 2.5,
+    "ribbon_thickness_mm": 0.5,
+    "tail_path_lengths_mm": [
+      27.0,
+      29.5,
+      32.5
+    ],
+    "resting_angle_paper_deg_range": [
+      25,
+      30
+    ],
+    "provenance": "SOURCE-SUPPORTED dimensions; tail/tip free shape is RECONSTRUCTED REFERENCE",
+    "notes": "Width/thickness/tail dimensions follow the paper/preprint supplementary simulation. The published protocol notes many standard three-tail samples used ~0.4 mm veneer; 0.5 mm is retained to match the course machine specification and the simulation geometry."
+  },
+  "large_whitebark_pine_reference": {
+    "tails": 3,
+    "coil_layers": 1,
+    "coil_turns": 7,
+    "coil_axial_length_mm": 85.0,
+    "mandrel_diameter_mm": 3.0,
+    "ribbon_width_mm": 12.0,
+    "ribbon_thickness_mm": 0.8,
+    "flat_veneer_length_mm": 300.0,
+    "seed_length_mm": 11.0,
+    "notes": "Large-tail lengths and tip mold geometry were not available, so PR23 omits tails rather than inventing them."
+  },
+  "course_target": {
+    "strip_width_mm": 4.0,
+    "strip_thickness_mm": 0.5,
+    "mandrel_diameter_mm": 0.8,
+    "nominal_guide_angle_deg": 45,
+    "active_turns": 7,
+    "notes": "Course/experimental target. See docs/carrier-geometry.md: not gap-free as stated; keep angle and pitch as recipe variables."
+  }
+}

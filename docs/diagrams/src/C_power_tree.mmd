@@ -1,0 +1,16 @@
+flowchart TB
+  classDef pwr fill:#fff8e6,stroke:#a6761d,color:#14273a
+  classDef safety fill:#e7f0ea,stroke:#2f6f4f,stroke-width:2px,color:#14273a
+  classDef logic fill:#f3f5f7,stroke:#5b6b7a,color:#14273a
+  AD["12 V 3 A certified adapter<br/>(barrel jack)"]:::pwr --> F3["Fuse 3 A"]:::safety --> ES["E-stop NC contact<br/>(physical interruption)"]:::safety
+  ES --> F2["Fuse 2 A"]:::safety --> VM["A4988 VMOT x2<br/>+100 uF each"]:::pwr
+  VM --> DIV["10 k / 4.7 k divider<br/>-> Uno D8 (rail present = safe)"]:::safety
+  ES --> B5["LM2596 buck 12 -> 5 V"]:::pwr --> SV["PCA9685 V+ / servos<br/>LED back-light, ULN2003"]:::pwr
+  USB1["PC USB"]:::logic --> UNO["Uno logic 5 V"]:::logic
+  USB2["PC USB (optional)"]:::logic --> C3["ESP32-C3 logic"]:::logic
+  UNO --> LOG["A4988 VDD, HX711, I2C modules"]:::logic
+  G(("Star ground")):::safety
+  AD -.- G
+  B5 -.- G
+  UNO -.- G
+  C3 -.- G

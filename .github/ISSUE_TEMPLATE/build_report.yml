@@ -1,0 +1,28 @@
+name: Build / test report
+description: Report results from printing, assembling or running SeedForge hardware
+labels: [build-report]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you. Measured data is the most valuable contribution. Attach logs (carriers.csv, trace.csv), photos and the calibration worksheet if you have them."
+  - type: input
+    id: commit
+    attributes: { label: Commit or release you built from, placeholder: "v0.3.0-alpha or a commit hash" }
+    validations: { required: true }
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options: ["Phase 0 material", "Phase 1 winder", "Phase 2 cut/demold", "Phase 3 tails", "Phase 4 drying", "Phase 5 assembly", "Phase 6 vision", "Phase 7 transfer", "Printing / fit only"]
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes: { label: What you built or tested, description: "Parts, printer and settings, purchased-part substitutions" }
+    validations: { required: true }
+  - type: textarea
+    id: results
+    attributes: { label: Results and measurements, description: "Numbers, not impressions. Include failures." }
+    validations: { required: true }
+  - type: textarea
+    id: deviations
+    attributes: { label: Deviations from the docs and things that did not fit }

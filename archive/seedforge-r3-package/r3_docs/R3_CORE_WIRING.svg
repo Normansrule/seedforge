@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <style>
+      .bg{fill:#fafafa}.title{font:700 42px Arial;fill:#142f44}.head{font:700 22px Arial;fill:#142f44}.txt{font:17px Arial;fill:#263b48}
+      .box{fill:#fff;stroke:#607d8b;stroke-width:2;rx:14}.power{fill:#fff4da;stroke:#9b6d18;stroke-width:2;rx:14}.safe{fill:#ffe9e9;stroke:#a94442;stroke-width:2;rx:14}
+      .line{stroke:#325d75;stroke-width:3;fill:none}.pwr{stroke:#b77a17;stroke-width:4;fill:none}.red{stroke:#a94442;stroke-width:4;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="1050"/>
+  <text x="55" y="65" class="title">SeedForge R3 - Core Winder Wiring</text>
+  <text x="55" y="100" class="txt">This drawing matches r3_docs/R3_CORE_PIN_MAP.csv. Motor phases use keyed connectors, not USB-C.</text>
+
+  <rect x="55" y="145" width="280" height="150" class="power"/>
+  <text x="80" y="182" class="head">USB-C PD Input</text>
+  <text x="80" y="216" class="txt">65 W supply -> PD trigger 20 V</text>
+  <text x="80" y="246" class="txt">-> fuse -> 12 V buck</text>
+  <text x="80" y="276" class="txt">-> 5 V buck for servos</text>
+
+  <rect x="55" y="340" width="280" height="130" class="safe"/>
+  <text x="80" y="378" class="head">E-stop Power Cut</text>
+  <text x="80" y="412" class="txt">NC physical contact / relay</text>
+  <text x="80" y="442" class="txt">removes actuator 12 V</text>
+
+  <rect x="450" y="145" width="360" height="650" class="box"/>
+  <text x="485" y="185" class="head">Arduino Uno</text>
+  <text x="485" y="225" class="txt">D2 ROT_STEP -> A4988 #1 STEP</text>
+  <text x="485" y="255" class="txt">D3 ROT_DIR -> A4988 #1 DIR</text>
+  <text x="485" y="285" class="txt">D4 LIN_STEP -> A4988 #2 STEP</text>
+  <text x="485" y="315" class="txt">D5 LIN_DIR -> A4988 #2 DIR</text>
+  <text x="485" y="345" class="txt">D6 -> both ENABLE</text>
+  <text x="485" y="390" class="txt">D7 START button -> GND</text>
+  <text x="485" y="420" class="txt">D8 E-stop feedback NC -> GND</text>
+  <text x="485" y="450" class="txt">D9 HOME NC -> GND</text>
+  <text x="485" y="480" class="txt">D10 END NC -> GND</text>
+  <text x="485" y="525" class="txt">D11 HX711 DOUT</text>
+  <text x="485" y="555" class="txt">D12 HX711 SCK</text>
+  <text x="485" y="585" class="txt">A0 dancer position optional</text>
+  <text x="485" y="630" class="txt">A1 SoftwareSerial RX &lt;- ESP32 TX</text>
+  <text x="485" y="660" class="txt">A2 SoftwareSerial TX -&gt; divider -&gt; ESP32 RX</text>
+  <text x="485" y="705" class="txt">A4 SDA / A5 SCL -> ICM-20948</text>
+  <text x="485" y="750" class="txt">USB -> development PC</text>
+
+  <rect x="925" y="145" width="290" height="245" class="box"/>
+  <text x="950" y="185" class="head">A4988 #1 - Rotation</text>
+  <text x="950" y="222" class="txt">VDD -> Uno 5 V</text>
+  <text x="950" y="252" class="txt">VMOT -> switched 12 V</text>
+  <text x="950" y="282" class="txt">100 uF near VMOT/GND</text>
+  <text x="950" y="312" class="txt">A/B phases -> NEMA17</text>
+  <text x="950" y="342" class="txt">motor -> metal 0.8 mm chuck</text>
+  <text x="950" y="372" class="txt">-> 0.8 mm steel mandrel</text>
+
+  <rect x="1260" y="145" width="285" height="215" class="box"/>
+  <text x="1285" y="185" class="head">A4988 #2 - Linear</text>
+  <text x="1285" y="222" class="txt">VDD -> Uno 5 V</text>
+  <text x="1285" y="252" class="txt">VMOT -> switched 12 V</text>
+  <text x="1285" y="282" class="txt">100 uF near VMOT/GND</text>
+  <text x="1285" y="312" class="txt">A/B phases -> NEMA17</text>
+  <text x="1285" y="342" class="txt">motor -> T8x8 axis</text>
+
+  <rect x="925" y="455" width="290" height="180" class="box"/>
+  <text x="950" y="495" class="head">Load Cell + HX711</text>
+  <text x="950" y="532" class="txt">Load cell -> HX711 A+/A-</text>
+  <text x="950" y="562" class="txt">DOUT -> Uno D11</text>
+  <text x="950" y="592" class="txt">SCK -> Uno D12</text>
+  <text x="950" y="622" class="txt">Calibrate before PID/trip use</text>
+
+  <rect x="1260" y="455" width="285" height="180" class="box"/>
+  <text x="1285" y="495" class="head">ICM-20948</text>
+  <text x="1285" y="532" class="txt">SDA -> Uno A4</text>
+  <text x="1285" y="562" class="txt">SCL -> Uno A5</text>
+  <text x="1285" y="592" class="txt">vibration supervisor only</text>
+  <text x="1285" y="622" class="txt">not primary tension sensor</text>
+
+  <rect x="925" y="710" width="620" height="245" class="box"/>
+  <text x="950" y="750" class="head">ESP32-C3 USB-C + Vision Host</text>
+  <text x="950" y="787" class="txt">ESP32 TX -&gt; Uno A1 direct</text>
+  <text x="950" y="817" class="txt">Uno A2 -&gt; 1k series -&gt; ESP32 RX node; 2k from node to GND</text>
+  <text x="950" y="847" class="txt">ESP32 drives ILI9341 UI and BLE/Wi-Fi</text>
+  <text x="950" y="877" class="txt">Vision host sends: HEARTBEAT, VISION_OK, FAULT_GAP, FAULT_OVERLAP, FAULT_LENGTH</text>
+  <text x="950" y="907" class="txt">Loss of heartbeat during winding -> SAFE_STOP</text>
+  <text x="950" y="937" class="txt">Common signal ground required</text>
+
+  <path d="M335 225 L450 225" class="pwr"/>
+  <path d="M335 405 L925 260" class="red"/>
+  <path d="M335 405 L1260 260" class="red"/>
+  <path d="M810 260 L925 260" class="line"/>
+  <path d="M810 300 L1260 300" class="line"/>
+  <path d="M810 550 L925 550" class="line"/>
+  <path d="M810 705 L1260 545" class="line"/>
+  <path d="M810 650 L925 805" class="line"/>
+</svg>

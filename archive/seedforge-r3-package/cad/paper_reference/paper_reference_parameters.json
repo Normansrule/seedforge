@@ -1,0 +1,39 @@
+{
+  "paper_standard_reference": {
+    "tails": 3,
+    "coil_layers": 1,
+    "coil_turns": 7,
+    "coil_axial_length_mm": 35.0,
+    "mandrel_diameter_mm": 0.8,
+    "ribbon_width_mm": 2.5,
+    "ribbon_thickness_mm": 0.5,
+    "tail_path_lengths_mm": [
+      27.0,
+      29.5,
+      32.5
+    ],
+    "resting_angle_paper_deg_range": [
+      25,
+      30
+    ],
+    "notes": "Width/thickness/tail dimensions come from the paper/preprint supplementary simulation; the published protocol notes many standard three-tail samples used ~0.4 mm veneer, so 0.5 mm is retained here to match the EECS149 machine specification and the simulation geometry."
+  },
+  "large_whitebark_pine_reference": {
+    "tails": 3,
+    "coil_layers": 1,
+    "coil_turns": 7,
+    "coil_axial_length_mm": 85.0,
+    "mandrel_diameter_mm": 3.0,
+    "ribbon_width_mm": 12.0,
+    "ribbon_thickness_mm": 0.8,
+    "flat_veneer_length_mm": 300.0,
+    "seed_length_mm": 11.0,
+    "notes": "Exact large-tail lengths and exact tip mold geometry were not provided in the accessible article text, so PR23 omits the tails rather than inventing them."
+  },
+  "ee149_machine": {
+    "existing_project_strip_width_mm": 4.0,
+    "existing_project_strip_thickness_mm": 0.5,
+    "existing_project_mandrel_diameter_mm": 0.8,
+    "requested_angle_deg": 45
+  }
+}

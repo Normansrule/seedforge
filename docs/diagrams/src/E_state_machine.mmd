@@ -1,0 +1,24 @@
+stateDiagram-v2
+
+  [*] --> BOOT
+  BOOT --> HOME: HOME / button
+  HOME --> READY: homed (no cycle)
+  READY --> HOME: START (re-home + skipped-step check)
+  COMPLETE --> HOME: START / HOME
+  HOME --> PRETENSION: homed (cycle)
+  PRETENSION --> WIND: at start + tension OK
+  WIND --> VERIFY: commanded turns done
+  VERIFY --> COMPLETE: VISION_OK (M3 off)
+  VERIFY --> CLAMP: VISION_OK (M3 on)
+  CLAMP --> CUT
+  CUT --> DEMOLD
+  DEMOLD --> COMPLETE
+  COMPLETE --> BOOT: RESET
+  SAFE_STOP --> BOOT: RESET (E-stop closed, tension below trip)
+  note right of SAFE_STOP
+    entered from ANY state on: E-stop open, limit hit, limit wiring,
+    soft limit, tension high, load-cell lost, pretension timeout, home timeout,
+    skipped steps, heartbeat/vision timeout, FAULT_* from vision,
+    comm errors, guard open, STOP, local stop.
+    Drivers disabled; servo outputs off; position forgotten; RESET required.
+  end note

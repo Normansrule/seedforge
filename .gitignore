@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Node / website
+website/node_modules/
+website/dist/
+
+# Firmware
+tests/firmware/build/
+firmware/esp32/seedforge_bridge/secrets.h
+*.elf
+*.hex
+
+# Generated / local data
+datasets/synthetic/
+runs/
+releases/dist/
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+website/public/img/
+website/public/models/

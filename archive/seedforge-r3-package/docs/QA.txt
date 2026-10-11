@@ -1,0 +1,3 @@
+Unique parts: 55
+STL/STEP/3MF present for all parts.
+Watertight STL and <=180 mm check errors: 0

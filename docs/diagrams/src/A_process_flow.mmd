@@ -1,0 +1,17 @@
+flowchart LR
+  classDef core fill:#e7f0ea,stroke:#2f6f4f,stroke-width:2px,color:#14273a
+  classDef up fill:#f3f5f7,stroke:#5b6b7a,color:#14273a
+  classDef opt fill:#ffffff,stroke:#9aa5b1,stroke-dasharray:5 4,color:#5b6b7a
+  M0["M0 Prepared veneer<br/><small>approved lab process, not automated</small>"]:::opt
+  M1["M1 Feed + tension"]:::core
+  M2["M2 Synchronized winding"]:::core
+  M3["M3 Clamp + cut + demold"]:::core
+  M4["M4 Tail forming"]:::up
+  M5["M5 Free drying"]:::up
+  M6["M6 Seed + tip + 3-tail assembly"]:::up
+  M7["M7 Vision QA"]:::core
+  M8["M8 Output storage"]:::up
+  M9["M9 XY transfer<br/><small>optional</small>"]:::opt
+  M10["M10 Drone cassette<br/><small>optional, downstream</small>"]:::opt
+  M0 --> M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> M10
+  M2 -. "coil check" .-> M7

@@ -1,0 +1,29 @@
+{
+  "name": "my_lot_A_trial",
+  "provenance": "EXAMPLE ONLY - copy and replace every value with your own measured data",
+  "strip_width_mm": 2.5,
+  "strip_thickness_mm": 0.5,
+  "mandrel_diameter_mm": 0.8,
+  "pitch_mm": 5.0,
+  "active_turns": 7,
+  "sacrificial_turns": 1,
+  "rate_rpm": 10.0,
+  "accel_rpm_s": 30.0,
+  "start_mm": 5.0,
+  "require_tension": true,
+  "require_vision": true,
+  "m3_enabled": false,
+  "demold_mm": 20.0,
+  "heartbeat_ms": 3000,
+  "vision": {
+    "px_per_mm": 40.0,
+    "max_gap_mm": 1.6,
+    "max_overlap_mm": 0.4,
+    "pitch_tol_frac": 0.15,
+    "turns_tol": 0.5,
+    "max_axis_sag_mm": 0.5
+  },
+  "notes": "Example of a material-trial recipe after Phase 0. Tension values here are placeholders, NOT measured.",
+  "tension_min_N": 0.05,
+  "tension_max_N": 0.2
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#fff}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"/website/node_modules/three/build/three.module.js","three/addons/":"/website/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const q = new URLSearchParams(location.search);
+const W = +(q.get('w')||1600), H = +(q.get('h')||1000);
+const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
+renderer.setPixelRatio(1); renderer.setSize(W,H);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.NeutralToneMapping; renderer.shadowMap.enabled = true;
+renderer.setClearColor(q.get('bg')||'#ffffff');
+document.body.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xffffff, 0xb8c2cc, 1.6));
+const key = new THREE.DirectionalLight(0xffffff, 2.2); key.position.set(1,-1.4,2.2); key.castShadow=true; scene.add(key);
+const fill = new THREE.DirectionalLight(0xffffff, 0.8); fill.position.set(-2,1,1); scene.add(fill);
+const hide = (q.get('hide')||'').split(',').filter(Boolean);
+const only = (q.get('only')||'').split(',').filter(Boolean);
+new GLTFLoader().load(q.get('glb'), (g) => {
+  const root = g.scene;   // GLB is Y-up (trimesh converts); our CAD is Z-up
+  root.rotation.x = -Math.PI/2;
+  root.traverse(o => { if (o.isMesh) {
+      const n = o.name || o.parent?.name || '';
+      if (hide.some(h => n.startsWith(h))) o.visible = false;
+      if (only.length && !only.some(h => n.startsWith(h))) o.visible = false;
+      o.castShadow = o.receiveShadow = true;
+      if (q.get('edges')) { const e = new THREE.LineSegments(new THREE.EdgesGeometry(o.geometry, 28), new THREE.LineBasicMaterial({color:0x2b3440, transparent:true, opacity:0.35})); o.add(e); }
+  }});
+  // explode: move nodes listed as name:dx:dy:dz (CAD mm, Z-up)
+  (q.get('move')||'').split(';').filter(Boolean).forEach(s => { const [n,dx,dy,dz]=s.split(':');
+     root.traverse(o => { if (o.name===n) o.position.add(new THREE.Vector3(+dx, +dz, -dy)); }); });
+  scene.add(root); root.updateMatrixWorld(true);
+  const box = new THREE.Box3();
+  root.traverse(o => { if (o.isMesh && o.visible) box.expandByObject(o); });
+  const c = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3()).length();
+  const az = +(q.get('az')||-50)*Math.PI/180, el = +(q.get('el')||28)*Math.PI/180, zoom = +(q.get('zoom')||1);
+  const cam = q.get('ortho') ? new THREE.OrthographicCamera(-W/H*size/2/zoom, W/H*size/2/zoom, size/2/zoom, -size/2/zoom, 0.1, size*20)
+                            : new THREE.PerspectiveCamera(+(q.get('fov')||30), W/H, size/100, size*20);
+  const dist = q.get('ortho') ? size*3 : size/2/Math.tan(cam.fov*Math.PI/360)/zoom*1.05;
+  // CAD frame: z up. three frame after rotation: y up, cad y -> -z
+  const dirCad = new THREE.Vector3(Math.cos(el)*Math.cos(az), Math.cos(el)*Math.sin(az), Math.sin(el));
+  const dir = new THREE.Vector3(dirCad.x, dirCad.z, -dirCad.y);
+  const tgt = c.clone().add(new THREE.Vector3(+(q.get('tx')||0), +(q.get('tz')||0), -(+(q.get('ty')||0))));
+  cam.position.copy(tgt.clone().add(dir.multiplyScalar(dist))); cam.up.set(0,1,0); cam.lookAt(tgt);
+  key.position.copy(cam.position.clone().add(new THREE.Vector3(size, size*2, size))); key.target.position.copy(tgt); scene.add(key.target);
+  renderer.render(scene, cam);
+  // project named anchors for labelling
+  const anchors = {};
+  const proj = v => { const p = v.clone().project(cam); return [(p.x+1)/2*W, (1-p.y)/2*H]; };
+  root.traverse(o => { if (o.isMesh && o.visible) { const b = new THREE.Box3().setFromObject(o);
+      const n = o.name || o.parent?.name;
+      // top-most visible point (screen) as a label anchor, and the screen-space bbox
+      const pts = []; for (const x of [b.min.x,b.max.x]) for (const y of [b.min.y,b.max.y]) for (const z of [b.min.z,b.max.z]) pts.push(proj(new THREE.Vector3(x,y,z)));
+      const xs = pts.map(p=>p[0]), ys = pts.map(p=>p[1]);
+      anchors[n] = {c: proj(b.getCenter(new THREE.Vector3())), bb: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)],
+                    world: [b.min.x, b.min.y, b.min.z, b.max.x, b.max.y, b.max.z]}; } });
+  window.__anchors = anchors; window.__done = true;
+});
+</script></body></html>

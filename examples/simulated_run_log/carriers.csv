@@ -1,0 +1,2 @@
+timestamp,carrier_id,run_id,data_source,material_lot,width_mm,thickness_mm,mandrel_diameter_mm,guide_angle_deg,pitch_mm,active_turns,sacrificial_turns,tension_target_N,tension_mean_N,tension_max_N,vibration_rms_mg,winding_rate_rpm,turn_count,lin_steps,camera_result,measured_length_mm,demold_result,tail_form_recipe,drying_duration_h,final_result,fault,notes
+2026-10-11T23:03:33+00:00,SIMCARRIER-20261011T230333Z-72cd20,SIM-normal_cycle-20261011T230333Z-d0f3e2,SIMULATION - not a physical carrier,,,,0.8,,4.084,7,1,,,,,30.0,8,13069,,,,,,SIM_COMPLETE,NONE,scenario normal_cycle

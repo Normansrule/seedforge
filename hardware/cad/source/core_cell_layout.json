@@ -1,0 +1,2599 @@
+{
+  "parameters": {
+    "AXIS_H": 37.0,
+    "LIN_Y": -127.0,
+    "LIN_Z": 22.0,
+    "ROD_SPACING": 56.0,
+    "ROD_D": 8.0,
+    "ROD_LEN": 250.0,
+    "SCREW_LEN": 250.0,
+    "HOME_TRIP_X": 45.0,
+    "END_TRIP_X": 149.0,
+    "LM8UU_OD": 15.0,
+    "LM8UU_L": 24.0,
+    "BORE_LM8UU": 15.2,
+    "BORE_ROD": 8.2,
+    "NEMA": 42.3,
+    "NEMA_HOLE": 31.0,
+    "NEMA_BOSS": 22.0,
+    "M2_CLR": 2.4,
+    "M2_PILOT": 1.8,
+    "BASE_CLR": 2.4,
+    "M2_NUT_AF": 4.0,
+    "NUT_BODY_BORE": 10.6,
+    "NUT_PCD": 16.0,
+    "CARRIAGE_LEN": 40.0,
+    "NEMA_POCKET": 42.6,
+    "LC_TOP": 24.7,
+    "LC_POCKET": 13.0,
+    "LC_PRELOAD": 0.3,
+    "LC_CAP_X": [
+      -24.0,
+      -6.0
+    ],
+    "LC_CAP_Y": 9.25,
+    "ROLLER_Z": 33.7,
+    "CAM_X": 70.0,
+    "CAM_PLATE_Z": 110.0,
+    "MAST_Y0": 62.0,
+    "F06_TOP_TO_STRIP": 0.6,
+    "STRIP_T": 0.5,
+    "MANDREL_D": 0.8,
+    "MANDREL_LEN": 100.0,
+    "CHUCK_JAW_X": 21.0,
+    "W05_X": 104.0,
+    "GUIDE_STANDOFF": 27.0,
+    "SLOT_R_IN": 34.5,
+    "SLOT_R_OUT": 74.5,
+    "ANGLE_RANGE": 60.0,
+    "FAN_R0": 29.0,
+    "FAN_R1": 86.0,
+    "FAN_HALF": 66.0,
+    "ROD_Y": [
+      -99.0,
+      -155.0
+    ],
+    "STRIP_Z": 37.65,
+    "F06_BASE_Z": 30.25,
+    "ARM_PLATE_T": 4.0,
+    "CARR_HALF_W": 38.6,
+    "CARR_TOP": 34.0,
+    "CARR_Y_FACE": -88.4
+  },
+  "categories": {
+    "base_plywood_18mm": "purchased",
+    "W01_nema17_rotation_mount": "printed_r3",
+    "motor_rotation_NEMA17": "purchased",
+    "motor_rotation_shaft": "purchased",
+    "W15_nema17_body_clamp_rotation": "printed_new",
+    "chuck_adapter_5mm": "purchased",
+    "mini_drill_chuck": "purchased",
+    "mandrel_0p8mm_steel": "purchased",
+    "W13_w05_axis_riser_11mm": "printed_new",
+    "W05_mandrel_end_guide": "printed_r3",
+    "guide_tube_ptfe": "purchased",
+    "W09_linear_motor_end_block": "printed_new",
+    "motor_linear_NEMA17": "purchased",
+    "motor_linear_shaft": "purchased",
+    "W16_nema17_body_clamp_linear": "printed_new",
+    "W10_linear_idler_end_block": "printed_new",
+    "rod_8mm_1": "purchased",
+    "rod_8mm_2": "purchased",
+    "coupler_5x8": "purchased",
+    "W14_limit_switch_clamp_home": "printed_new",
+    "microswitch_home": "purchased",
+    "microswitch_lever_home": "purchased",
+    "W14_limit_switch_clamp_end": "printed_new",
+    "microswitch_end": "purchased",
+    "microswitch_lever_end": "purchased",
+    "leadscrew_T8x8": "purchased",
+    "bearing_608ZZ": "purchased",
+    "W11_lm8uu_traverse_carriage": "printed_new",
+    "lm8uu_1": "purchased",
+    "lm8uu_2": "purchased",
+    "t8_flange_nut": "purchased",
+    "W12_angle_adjustable_guide_arm": "printed_new",
+    "F06_veneer_guide_lower": "printed_r3",
+    "F07_veneer_guide_lid": "printed_r3",
+    "F09_spool_stand_left_608_bore": "printed_new",
+    "F02_spool_stand_right": "printed_r3",
+    "axle_8mm": "purchased",
+    "F10_spool_hub_1": "printed_new",
+    "F10_spool_hub_2": "printed_new",
+    "veneer_spool": "purchased",
+    "F11_dancer_pivot_post": "printed_new",
+    "pot_10k": "purchased",
+    "F04_dancer_arm": "printed_r3",
+    "F05_dancer_roller": "printed_r3",
+    "F08_load_cell_mount": "printed_new",
+    "load_cell_1kg_bar": "purchased",
+    "F13_load_cell_clamp_cap": "printed_new",
+    "F12_sensing_roller_yoke": "printed_new",
+    "sensing_rollers_MR62ZZ": "purchased",
+    "backlight_panel": "purchased",
+    "backlight_standoffs": "purchased",
+    "camera_mast_plywood": "purchased",
+    "W17_camera_mast_foot": "printed_new",
+    "W18_camera_arm": "printed_new",
+    "camera_proxy": "purchased",
+    "veneer_coil_wound": "material",
+    "veneer_strip_feed": "material",
+    "veneer_strip_guide": "material",
+    "veneer_strip_dancer": "material",
+    "veneer_strip_spool": "material"
+  },
+  "new_parts": {
+    "W09_linear_motor_end_block": {
+      "module": "M2 winder",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Rod sockets + NEMA17 boss register for the traverse axis (motor held by W16). Print on its base, 40% infill, 4 walls."
+    },
+    "W10_linear_idler_end_block": {
+      "module": "M2 winder",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Rod sockets + 608ZZ pocket supporting the free end of the T8x8 screw."
+    },
+    "W11_lm8uu_traverse_carriage": {
+      "module": "M2 winder",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Two LM8UU bores (15.2 mm, tune with Z01) + T8 flange-nut mount (16 mm PCD). Print standing on the -x face."
+    },
+    "W12_angle_adjustable_guide_arm": {
+      "module": "M1/M2",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Carries F06/F07. Concentric arc slots centred on the mandrel contact point give +/-60 deg of guide angle with 5 deg index marks."
+    },
+    "W13_w05_axis_riser_11mm": {
+      "module": "M2 winder",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Lifts retained W05 end guide to the 37.0 mm mandrel axis."
+    },
+    "W14_limit_switch_rod_clamp": {
+      "module": "M2 winder",
+      "qty": 2,
+      "material": "PETG",
+      "notes": "Home and end microswitch clamp on the outer 8 mm rod; slide to set trip points (home: carriage x 45 mm)."
+    },
+    "F08_load_cell_mount": {
+      "module": "M1 feed",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Channel cradle for the fixed end of a 1 kg bar load cell; clamped by F13 with 4 x M2."
+    },
+    "F12_sensing_roller_yoke": {
+      "module": "M1 feed",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Slides over the load-cell free end; 2 x MR62ZZ on an M2 axle form the tension-sensing roller."
+    },
+    "F13_load_cell_clamp_cap": {
+      "module": "M1 feed",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Cap that clamps the load cell into F08 (0.3 mm preload) with 4 x M2."
+    },
+    "W15_nema17_body_clamp_rotation": {
+      "module": "M2 winder",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Split collar holding the rotation NEMA17 body (axis 37 mm); 2 x M2 pinch, 4 x M2 wood screws. Print on the -x face, 4 walls."
+    },
+    "W16_nema17_body_clamp_linear": {
+      "module": "M2 winder",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Split collar holding the traverse NEMA17 body (axis 22 mm, 0.7 mm floor rests on the plywood). Print on the -x face, 4 walls."
+    },
+    "W17_camera_mast_foot": {
+      "module": "M7 vision",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Foot bracket for the 30 x 18 mm plywood camera mast; M2 wood screws."
+    },
+    "W18_camera_arm": {
+      "module": "M7 vision",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Arm from the mast top holding a 38 x 38 mm USB board camera (4 x M2, 34 mm pattern - MEASURE) over the coil. Print on the mast-side face."
+    },
+    "F09_spool_stand_left_608_bore": {
+      "module": "M1 feed",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Supersedes R3 F01 (which had no bearing bore). Derived from the R3 F01 STEP."
+    },
+    "F10_spool_hub_8mm_bore": {
+      "module": "M1 feed",
+      "qty": 2,
+      "material": "PETG",
+      "notes": "Supersedes R3 F03 (5.2 mm bore) for an 8 mm axle in 608ZZ bearings. Derived from the R3 F03 STEP."
+    },
+    "F11_dancer_pivot_post": {
+      "module": "M1 feed",
+      "qty": 1,
+      "material": "PETG",
+      "notes": "Pivot post for F04: 10k pot bushing is the pivot (A0 dancer angle). MEASURE pot bushing."
+    }
+  },
+  "static_interference": [],
+  "traverse_sweep": [
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          990.038
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "motor_rotation_NEMA17",
+          223.285
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W15_nema17_body_clamp_rotation",
+          177.817
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "chuck_adapter_5mm",
+          49.493
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          12.668
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          316.411
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "motor_rotation_NEMA17",
+          69.777
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W15_nema17_body_clamp_rotation",
+          55.568
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "chuck_adapter_5mm",
+          18.939
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          4.864
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          825.599
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "motor_rotation_NEMA17",
+          53.94
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W15_nema17_body_clamp_rotation",
+          37.337
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "chuck_adapter_5mm",
+          7.136
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          177.836
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          258.993
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "motor_rotation_NEMA17",
+          16.856
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W15_nema17_body_clamp_rotation",
+          11.668
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "chuck_adapter_5mm",
+          2.088
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          62.012
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          644.026
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          270.033
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          201.258
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          96.004
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          459.274
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          279.895
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          143.523
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          99.64
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          274.522
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          279.895
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          85.788
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          99.64
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          95.309
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          278.22
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          29.784
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          99.077
+        ]
+      ]
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          4.562
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          148.645
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          1.426
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          53.238
+        ]
+      ]
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "mini_drill_chuck",
+          19.673
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "mini_drill_chuck",
+          7.548
+        ]
+      ]
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": -60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          14.404
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          4.501
+        ]
+      ]
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          193.728
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          60.54
+        ]
+      ]
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          298.953
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          93.423
+        ]
+      ]
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          267.409
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          83.565
+        ]
+      ]
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          84.709
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          26.472
+        ]
+      ]
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          2.577
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          0.805
+        ]
+      ]
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": -60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    },
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ],
+        [
+          "F06_veneer_guide_lower",
+          "W01_nema17_rotation_mount",
+          25.527
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W01_nema17_rotation_mount",
+          7.977
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": -45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": -45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    },
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": -30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": -30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    },
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": 0.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": 0.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    },
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": 30.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": 30.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    },
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": 45.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": 45.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    },
+    {
+      "carriage_x": 20,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          902.794
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          229.881
+        ]
+      ]
+    },
+    {
+      "carriage_x": 25,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_home",
+          308.851
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          158.645
+        ]
+      ]
+    },
+    {
+      "carriage_x": 30,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          471.077
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          87.408
+        ]
+      ]
+    },
+    {
+      "carriage_x": 35,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_home",
+          51.896
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          101.849
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          23.48
+        ]
+      ]
+    },
+    {
+      "carriage_x": 40,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_home",
+          31.828
+        ],
+        [
+          "W12_angle_adjustable_guide_arm",
+          "W01_nema17_rotation_mount",
+          0.016
+        ]
+      ]
+    },
+    {
+      "carriage_x": 45,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 50,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 55,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          6.336
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          1.98
+        ]
+      ]
+    },
+    {
+      "carriage_x": 60,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          72.618
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          31.976
+        ]
+      ]
+    },
+    {
+      "carriage_x": 65,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          198.86
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          96.464
+        ]
+      ]
+    },
+    {
+      "carriage_x": 70,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          367.094
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          149.037
+        ]
+      ]
+    },
+    {
+      "carriage_x": 75,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          312.125
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          112.246
+        ]
+      ]
+    },
+    {
+      "carriage_x": 80,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "F06_veneer_guide_lower",
+          "W05_mandrel_end_guide",
+          132.686
+        ],
+        [
+          "F07_veneer_guide_lid",
+          "W05_mandrel_end_guide",
+          41.464
+        ]
+      ]
+    },
+    {
+      "carriage_x": 85,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 90,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 95,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 100,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 105,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 110,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 115,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 120,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 125,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 130,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 135,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 140,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 145,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 150,
+      "guide_angle_deg": 60.0,
+      "collisions": []
+    },
+    {
+      "carriage_x": 155,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          47.742
+        ]
+      ]
+    },
+    {
+      "carriage_x": 160,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          138.39
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 165,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          554.953
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ]
+      ]
+    },
+    {
+      "carriage_x": 170,
+      "guide_angle_deg": 60.0,
+      "collisions": [
+        [
+          "W11_lm8uu_traverse_carriage",
+          "W14_limit_switch_clamp_end",
+          849.032
+        ],
+        [
+          "W11_lm8uu_traverse_carriage",
+          "microswitch_end",
+          101.849
+        ],
+        [
+          "lm8uu_2",
+          "W14_limit_switch_clamp_end",
+          427.639
+        ]
+      ]
+    }
+  ],
+  "collision_free_carriage_window_mm": {
+    "-60.0": [
+      60,
+      120
+    ],
+    "-45.0": [
+      45,
+      150
+    ],
+    "-30.0": [
+      45,
+      150
+    ],
+    "0.0": [
+      45,
+      150
+    ],
+    "30.0": [
+      45,
+      150
+    ],
+    "45.0": [
+      45,
+      150
+    ],
+    "60.0": [
+      85,
+      150
+    ]
+  }
+}

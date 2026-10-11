@@ -1,0 +1,32 @@
+module,qty,item,specification,source_status,why_needed
+Control,1,Arduino Uno R3,existing board,owned/sponsored,core motion/FSM
+Control,1,ESP32-C3 USB-C board,XIAO/SuperMini class,buy,communications/UI bridge
+Motion,2,NEMA17 stepper motor,existing 40-45 Ncm class,owned/sponsored,rotation + translation
+Motion,2,A4988 driver,existing modules with heatsinks,owned/sponsored,stepper drive
+Vision,1,Intel RealSense or current camera,existing,owned/sponsored,defect/length checks
+Sensors,1,ICM-20948 9DoF,current breakout,owned/sponsored,vibration supervisor
+Sensors,1,1 kg load cell + HX711,bar load cell,buy,primary strip-tension measurement
+Power,1,65 W USB-C PD supply,20 V profile,buy,bench power input
+Power,1,USB-C PD trigger,20 V request,buy,PD conversion
+Power,1,20 V to 12 V buck,5 A continuous with airflow,buy,motor rail
+Power,1,12 V to 5 V buck,5 A,buy,servos/aux rail
+Safety,1,latching mushroom E-stop,NC contacts,buy,physical actuator power interruption
+Safety,1,inline fuse/distribution,5 A main + branch fuses,buy,power protection
+Winder,1,T8x8 lead screw + nut,300 mm,buy,linear axis
+Winder,2,8 mm smooth rod,300 mm,buy,linear guides
+Winder,4,LM8UU bearing,8 mm shaft,buy,linear carriage
+Winder,1,5x8 mm flexible coupler,NEMA17 to T8,buy,linear axis coupling
+Winder,1,mini pin vise/chuck,grips 0.8 mm rod,buy,low-runout mandrel grip
+Winder,5,0.8 mm straight metal mandrel,about 100 mm working length,buy,replaceable forming rods
+Winder,1,PTFE/brass guide tube,about 1.0 mm ID,buy,far-end mandrel support
+Feed,4,608ZZ bearing,8x22x7 mm,buy,spool/support hardware
+Feed,4,623ZZ bearing,3x10x4 mm,buy,small rollers
+Feed,1,spring assortment,low-force dancer,buy,tension buffering
+Feed,1,felt/silicone/PTFE consumables,contact liners,buy,low-friction/compliant interfaces
+Cut,1,micro servo,MG90S or equivalent,buy,clamp/cutter actuation
+Cut,1,purchased guarded micro shear,spring-return,buy,cutting blade/mechanism
+Frame,1,18 mm plywood/MDF base,about 800 x 350 mm,buy,low-cost machine base
+Fasteners,1,M3 assortment,M3x6-M3x30,buy,primary mechanical assembly
+Fasteners,1,M2 assortment,M2x6-M2x16,buy,small covers/servos
+Electrical,1,wire/ferrules/terminal blocks,22-18 AWG as appropriate,buy,reliable wiring
+Printing,1,PETG filament,1 kg minimum,buy,core printed fixtures/brackets

@@ -1,0 +1,12 @@
+# Wind the paper-reference body (5.0 mm/rev), report a measured length, accept.
+set hb_period_ms 500
+send SET_PITCH=5.0
+send SET_TURNS=7
+send HOME
+until READY 60000
+send START
+until VERIFY 200000
+send LENGTH_MM=40.38
+send VISION_OK
+until COMPLETE 20000
+step 50

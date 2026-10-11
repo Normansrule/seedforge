@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeedForge</title>
+  <meta name="description" content="SeedForge: an open-source modular manufacturing platform for moisture-responsive wooden self-burying seed carriers. Research prototype v0.3.0-alpha - designed and software-tested, not yet physically validated.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314273a'/%3E%3Cpath d='M14 40c6-10 12 10 18 0s12 10 18 0' stroke='%23c8a165' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cpath d='M32 14v12' stroke='%232f6f4f' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip" href="#what">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="SeedForge home">
+      <svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#14273a"/><path d="M14 40c6-10 12 10 18 0s12 10 18 0" stroke="#c8a165" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M32 14v12" stroke="#2f6f4f" stroke-width="6" stroke-linecap="round"/></svg>
+      SeedForge <span class="ver">v0.3.0-alpha</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#process">Process</a><a href="#machine">Machine</a><a href="#modules">Modules</a><a href="#carrier">Carrier</a>
+      <a href="#electronics">Electronics</a><a href="#vision">Vision</a><a href="#bom">BOM</a><a href="#roadmap">Roadmap</a>
+      <a href="#status">Status</a><a href="#downloads">Downloads</a>
+    </nav>
+    <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">&#9680;</button>
+  </header>
+
+  <main id="top">
+    <!-- 1 Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Open-source research hardware</p>
+        <h1>SeedForge</h1>
+        <p class="lede">An open-source modular manufacturing platform for moisture-responsive wooden self-burying seed carriers.</p>
+        <p class="status-pill"><span class="dot"></span> v0.3.0-alpha &middot; designed, CAD-checked, firmware compile-tested, software unit-tested &middot; <strong>not yet physically validated</strong></p>
+        <div class="buttons">
+          <a class="btn primary" href="#machine">View interactive demo</a>
+          <a class="btn" data-repo="blob/main/docs/getting-started.md">Read build guide</a>
+          <a class="btn" href="#downloads">Download printable parts</a>
+          <a class="btn" data-repo="tree/main/hardware/cad">Explore CAD</a>
+          <a class="btn" href="#electronics">See electronics</a>
+          <a class="btn" href="#statemachine">Run simulator</a>
+        </div>
+      </div>
+      <figure class="hero-img">
+        <img src="img/hero_machine.png" alt="CAD render of the SeedForge Phase-1 core winding cell" width="1600" height="1100">
+        <figcaption>CAD render of the Phase-1 core cell. Not a photograph.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 2 What -->
+    <section id="what" class="band">
+      <h2><span class="num">02</span> What SeedForge is</h2>
+      <div class="cols3">
+        <div class="card"><h3>A manufacturing platform</h3><p>SeedForge winds thin wet wood veneer onto a 0.8 mm steel mandrel with synchronized rotation and traverse, checks every coil with a camera, cuts and demolds it, and logs each carrier. It is the factory side of the idea, not the seed product.</p></div>
+        <div class="card"><h3>Modular, buildable, cheap</h3><p>Ten modules (M1-M10), each printable on a 180 mm printer, testable on its own and replaceable. Generic NEMA17 motors, A4988 drivers, an Arduino Uno and a laptop; one M2 fastener kit for the whole machine. The core cell is about $128 in parts if you already own the Uno, motors and drivers.</p></div>
+        <div class="card"><h3>Honest about evidence</h3><p>Every claim carries an evidence level. CAD that checks out is <em>CAD-validated</em>, not "working". As of this release nothing has been built; the build guide and test procedures are ready for the first Phase-1 machine.</p></div>
+      </div>
+      <p class="note">SeedForge started as a UC Berkeley EECS 149 course project. It is not affiliated with or endorsed by the university or by the authors of the research paper below.</p>
+    </section>
+
+    <!-- 3 Why -->
+    <section id="why">
+      <h2><span class="num">03</span> Why self-burying seed carriers matter</h2>
+      <div class="split">
+        <div>
+          <p>Seeds scattered on the surface, for example by aircraft, are exposed to birds, rodents, sun and wind; many never establish. Luo et al. (<em>Nature</em> 614, 463-470, 2023) showed a three-tailed wooden carrier whose coiled body responds to humidity: it unwinds when wet and rewinds when dry, and with its tails braced against the ground, the tip carrying the seed works its way into the soil over repeated cycles.</p>
+          <p>Making such carriers by hand is slow and inconsistent. Repeatable, logged manufacturing - same strip, same tension, same pitch, same turn count - is a precondition for testing whether they work at scale. That is the gap SeedForge addresses.</p>
+          <p class="note">The animation explains the idea in our own drawing; it does not reproduce the paper's figures or data.</p>
+        </div>
+        <div id="anim-selfbury"></div>
+      </div>
+    </section>
+
+    <!-- 4 Process -->
+    <section id="process" class="band">
+      <h2><span class="num">04</span> Complete manufacturing process</h2>
+      <p>Prepared veneer (a separate, approved lab process) &rarr; M1 feed and tension &rarr; M2 synchronized winding &rarr; M3 clamp, cut and demold &rarr; M4 tail forming &rarr; M5 free drying &rarr; M6 seed, tip and three-tail assembly &rarr; M7 vision QA &rarr; M8 output, with optional M9 transfer and M10 drone cassette.</p>
+      <div id="anim-flow"></div>
+      <details class="fig"><summary>Process diagram (Mermaid source in docs/diagrams/src)</summary><img src="img/A_process_flow.svg" alt="Process flow diagram" loading="lazy"></details>
+    </section>
+
+    <!-- 5 Machine -->
+    <section id="machine">
+      <h2><span class="num">05</span> Interactive machine</h2>
+      <p>The Phase-1 core winding cell as laid out in CAD (R3.1). Drag to rotate, scroll to zoom, use <em>Explode</em>, <em>Parts</em> and <em>Labels</em>. Every printed and purchased part was intersected with every other: <strong id="interf"></strong> static interferences. The carriage was swept along its travel at guide angles from -60 to +60 degrees:</p>
+      <div id="viewer-machine"></div>
+      <div class="table-wrap"><table id="windows" class="compact"></table></div>
+    </section>
+
+    <!-- 6 Modules -->
+    <section id="modules" class="band">
+      <h2><span class="num">06</span> Module explorer</h2>
+      <div class="tabs" id="module-tabs" role="tablist"></div>
+      <div id="module-body"></div>
+    </section>
+
+    <!-- 7 Winding + process animations -->
+    <section id="winding">
+      <h2><span class="num">07</span> Winding animation</h2>
+      <p>To scale for the paper-reference recipe: 0.8 mm mandrel, 2.5 x 0.5 mm strip, 5.0 mm per revolution, 7 active + 1 sacrificial turn. The counters are the exact microstep totals the firmware commands.</p>
+      <div class="tabs small" id="anim-tabs" role="tablist"></div>
+      <div id="anim-process"></div>
+      <h3>Geometry: why pitch and guide angle are recipe variables</h3>
+      <div class="table-wrap"><table id="geometry"></table></div>
+      <p class="note">First-order helix model (<code>python -m seedforge.geometry</code>). The course target - a 4 mm strip at 45 degrees - is predicted to overlap itself by about 1.1 mm, so it cannot be "no gap, no overlap". Wet wood compresses and slips: measure real coils.</p>
+    </section>
+
+    <!-- 8 Carrier -->
+    <section id="carrier" class="band">
+      <h2><span class="num">08</span> Finished carrier 3D viewer</h2>
+      <p>Reference geometry: 7-coil body of 2.5 x 0.5 mm ribbon over 35 mm, three tails (27, 29.5, 32.5 mm path length), tip and seed envelope. Dimensions are SOURCE-SUPPORTED; tail and tip shapes are RECONSTRUCTED. A plastic print of it is a fixture reference, not a working carrier.</p>
+      <div class="split">
+        <div id="viewer-carrier"></div>
+        <figure><img src="img/seed_carrier_dimensioned.png" alt="Dimensioned reference carrier" loading="lazy"><figcaption>Dimensioned CAD render.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 9 Exploded -->
+    <section id="exploded">
+      <h2><span class="num">09</span> Exploded carrier viewer</h2>
+      <div id="viewer-exploded"></div>
+    </section>
+
+    <!-- 10 Electronics -->
+    <section id="electronics" class="band">
+      <h2><span class="num">10</span> Electronics and control architecture</h2>
+      <div class="cols2">
+        <figure><img src="img/B_electronics_hierarchy.svg" alt="Electronics hierarchy" loading="lazy"><figcaption>Host (vision, logs) &harr; optional ESP32-C3 bridge (or straight USB) &harr; Arduino Uno &rarr; drivers and sensors.</figcaption></figure>
+        <figure><img src="img/C_power_tree.svg" alt="Power tree" loading="lazy"><figcaption>A 12 V 3 A adapter feeds everything that moves through the E-stop contact; a divider from the switched rail tells the Uno. Motor phases use keyed connectors, never USB-C.</figcaption></figure>
+      </div>
+      <figure class="wide"><a href="img/seedforge_core_schematic.svg" target="_blank" rel="noopener"><img src="img/seedforge_core_schematic.svg" alt="Block-level system schematic" loading="lazy"></a><figcaption>Block-level system schematic (open full size). Research-prototype wiring, not certified machinery safety.</figcaption></figure>
+      <details class="fig"><summary>Arduino Uno pin map</summary><div class="table-wrap"><table id="pins" class="compact"></table></div></details>
+    </section>
+
+    <!-- 11 State machine -->
+    <section id="statemachine">
+      <h2><span class="num">11</span> State machine</h2>
+      <div class="split">
+        <figure><img src="img/E_state_machine.svg" alt="Controller state machine" loading="lazy"></figure>
+        <div>
+          <p>Replay real output of the hardware-free simulator, which runs a line-by-line port of the Uno controller (its traces are checked byte-for-byte against the compiled C++ core). Run it yourself with <code>python -m seedforge.simulator</code>.</p>
+          <div class="tabs small" id="sim-tabs" role="tablist"></div>
+          <div class="statebar" id="statebar"></div>
+          <pre class="trace" id="trace" aria-live="polite"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 Vision -->
+    <section id="vision" class="band">
+      <h2><span class="num">12</span> Vision QA</h2>
+      <p>An overhead camera images the coil as a silhouette against a back-light. A deterministic OpenCV pipeline (no machine learning, no cloud) measures pitch, turns, gaps, estimated overlap and axis sag, and sends one verdict to the controller.</p>
+      <div class="stack" id="vision-figs">
+        <figure><img src="img/vision_demo_good.png" alt="Annotated good coil" loading="lazy"><figcaption>VISION_OK</figcaption></figure>
+        <figure><img src="img/vision_demo_gap.png" alt="Annotated coil with a gap" loading="lazy"><figcaption>FAULT_GAP</figcaption></figure>
+        <figure><img src="img/vision_demo_overlap.png" alt="Annotated coil with overlap" loading="lazy"><figcaption>FAULT_OVERLAP</figcaption></figure>
+      </div>
+      <div class="split">
+        <div class="table-wrap"><table id="confusion"></table></div>
+        <p class="note warn">These numbers come from <strong>synthetic</strong> images and test the software only. Phase 6 needs a labelled set of real coil images split by material lot.</p>
+      </div>
+    </section>
+
+    <!-- 13 BOM -->
+    <section id="bom">
+      <h2><span class="num">13</span> BOM and low-cost design</h2>
+      <p>Three views of one master list, priced for a <strong>budget build</strong>: generic parts, one M2 fastener kit, a 12 V wall adapter, a USB board camera. Prices are planning estimates, not quotes; optional parts (ESP32 bridge, display, IMU, drone companion computer) are not counted. Supplier links appear only where the product page was checked.</p>
+      <div class="tabs small" id="bom-tabs" role="tablist"></div>
+      <div class="kpis" id="bom-kpis"></div>
+      <div class="table-wrap tall"><table id="bom-table" class="compact"></table></div>
+    </section>
+
+    <!-- 14 Roadmap -->
+    <section id="roadmap" class="band">
+      <h2><span class="num">14</span> Build roadmap</h2>
+      <p>Build in order; each phase has an acceptance gate. <strong>Do not jump to Phase 8.</strong></p>
+      <ol class="ladder" id="ladder"></ol>
+    </section>
+
+    <!-- 15 Status -->
+    <section id="status">
+      <h2><span class="num">15</span> Validation status</h2>
+      <div class="levels" id="levels"></div>
+      <div class="table-wrap"><table id="status-table"></table></div>
+      <p class="note">Source: <code>validation/status.yaml</code>. A level rises only with logged evidence in the same commit.</p>
+    </section>
+
+    <!-- 16 Drone -->
+    <section id="drone" class="band">
+      <h2><span class="num">16</span> Optional aerial deployment concept</h2>
+      <p>Downstream of manufacturing, after Phases 0-7. A proven ArduPilot aircraft flies (budget option: an ArduPilot-supported F405 quad); the flight controller signals a $4 RP2040 payload controller at each waypoint, which owns the release gates and confirms each release with an IR sensor; a companion computer for terrain classification is optional. The payload kit is about $18. Every planting point has a unique ID in one pre-assigned sector, intent is logged before release, and uncertain points are never retried automatically.</p>
+      <div id="anim-drone"></div>
+      <div class="cols2">
+        <figure><img src="img/I_drone_payload.svg" alt="Payload architecture" loading="lazy"><figcaption>Payload architecture (concept).</figcaption></figure>
+        <figure><img src="img/optional_drone_payload.png" alt="Four-cell payload cassette CAD" loading="lazy"><figcaption>D01-D06 cassette concept. Not flight-validated.</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 17 Downloads -->
+    <section id="downloads">
+      <h2><span class="num">17</span> Downloads</h2>
+      <div class="cols2">
+        <div class="card">
+          <h3>Release bundles</h3>
+          <ul class="links" id="release-links"></ul>
+          <p class="note">Bundles are attached to GitHub Releases and built by <code>tools/make_release.py</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Repository folders</h3>
+          <ul class="links" id="folder-links"></ul>
+        </div>
+      </div>
+      <h3>Phase-1 printed parts</h3>
+      <div class="table-wrap tall"><table id="parts-table" class="compact"></table></div>
+    </section>
+
+    <!-- 18 Citation -->
+    <section id="cite" class="band">
+      <h2><span class="num">18</span> Research reference and citation</h2>
+      <div class="cols2">
+        <div class="card">
+          <h3>The research that inspired this</h3>
+          <p>Luo, D., Maheshwari, A., Danielescu, A., Li, J., Yang, Y., Tao, Y., Sun, L., Patel, D. K., Wang, G., Yang, S., Zhang, T. &amp; Yao, L. Autonomous self-burying seed carriers for aerial seeding. <em>Nature</em> <strong>614</strong>, 463-470 (2023). <a href="https://doi.org/10.1038/s41586-022-05656-3">doi:10.1038/s41586-022-05656-3</a></p>
+          <p class="note">The paper's authors are not authors of SeedForge and have not reviewed it. No figures from the paper are reproduced here.</p>
+        </div>
+        <div class="card">
+          <h3>Cite SeedForge</h3>
+          <pre class="cite">Norman, A. and SeedForge contributors (2026).
+SeedForge: an open-source modular manufacturing platform for
+moisture-responsive wooden self-burying seed carriers.
+Version 0.3.0-alpha. https://github.com/Normansrule/seedforge</pre>
+          <p>Machine-readable: <a data-repo="blob/main/CITATION.cff">CITATION.cff</a></p>
+        </div>
+      </div>
+      <div class="disclaimer">
+        <h3>Disclaimer</h3>
+        <p>SeedForge is a research prototype. It is not an industrial production line, a certified machine, a chemically validated wood-processing system, a biologically validated seed product or a flight-certified payload. It does not include or automate chemical treatment of wood. Releasing seeds needs landowner permission and ecological review; aerial release is regulated. Renders are CAD visualizations, not photographs.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Software MIT &middot; hardware CERN-OHL-S-2.0 &middot; documentation CC BY-SA 4.0 &middot; <a data-repo="">GitHub repository</a> &middot; <a data-repo="blob/main/docs/safety.md">Safety</a> &middot; <a data-repo="blob/main/DISCLAIMER.md">Disclaimer</a></p>
+  </footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Lose 0.5 mm of carriage position per cycle (e.g. a slipping coupler). The home re-check
+# reports HOME_ERROR_MM each cycle; two consecutive errors > 0.3 mm stop with SKIPPED_STEPS.
+set hb_period_ms 500
+set auto_vision_ok 1
+set drift_per_cycle 200
+send HOME
+until READY 60000
+send START
+until COMPLETE 200000
+send START
+until COMPLETE 200000
+send START
+until SAFE_STOP 200000
+step 50

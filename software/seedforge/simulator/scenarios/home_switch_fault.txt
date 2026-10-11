@@ -1,0 +1,5 @@
+# Home switch never trips (broken actuator or mis-mounted switch).
+set home_dead 1
+send HOME
+until SAFE_STOP 200000
+step 20

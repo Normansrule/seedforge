@@ -1,0 +1,15 @@
+# E-stop loop opens during winding. RESET is refused until the loop is closed.
+set hb_period_ms 500
+send HOME
+until READY 60000
+send START
+until WIND 60000
+step 500
+set estop 0
+step 20
+send RESET
+step 100
+set estop 1
+step 20
+send RESET
+step 50

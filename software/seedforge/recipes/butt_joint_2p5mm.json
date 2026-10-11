@@ -1,0 +1,20 @@
+{
+  "name": "butt_joint_2p5mm",
+  "provenance": "ENGINEERING ASSUMPTION - butt-joint pitch from the first-order helix model; not yet measured",
+  "strip_width_mm": 2.5,
+  "strip_thickness_mm": 0.5,
+  "mandrel_diameter_mm": 0.8,
+  "pitch_mm": 3.162,
+  "active_turns": 7,
+  "sacrificial_turns": 1,
+  "rate_rpm": 30.0,
+  "accel_rpm_s": 30.0,
+  "start_mm": 5.0,
+  "require_tension": false,
+  "require_vision": true,
+  "m3_enabled": false,
+  "demold_mm": 20.0,
+  "heartbeat_ms": 3000,
+  "vision": {"px_per_mm": 40.0, "max_gap_mm": 0.3, "max_overlap_mm": 0.3, "pitch_tol_frac": 0.15, "turns_tol": 0.5, "max_axis_sag_mm": 0.5},
+  "notes": "Closest no-gap/no-overlap option for a 2.5 mm strip on a 0.8 mm mandrel. Wet veneer will change the effective diameter: calibrate."
+}

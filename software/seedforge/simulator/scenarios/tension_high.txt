@@ -1,0 +1,14 @@
+# Calibrated load cell reads above the validated trip during winding.
+set hb_period_ms 500
+set tension_valid 1
+set tension_mN 200
+send HOME
+until READY 60000
+send SET_TENSION_MAX=0.500
+send SET_TENSION_MIN=0.100
+send SET_REQUIRE_TENSION=1
+send START
+until WIND 60000
+step 400
+set tension_mN 700
+step 60

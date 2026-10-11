@@ -1,0 +1,42 @@
+[
+ {
+  "name": "course target as stated (4.0 mm strip, 45 deg)",
+  "pitch_mm": 4.084070449666732,
+  "strip_angle_deg": 44.99999999999999,
+  "guide_angle_deg": 45.00000000000001,
+  "normal_gap_mm": -1.1121260901970618,
+  "butt_joint_pitch_mm": 19.8160224854581,
+  "body_length_mm": 34.245347397159506,
+  "width_mm": 4.0
+ },
+ {
+  "name": "paper reference body (2.5 mm, 7 turns / 35 mm)",
+  "pitch_mm": 5.0,
+  "strip_angle_deg": 39.24243394149216,
+  "guide_angle_deg": 50.75756605850784,
+  "normal_gap_mm": 0.6630153122957818,
+  "butt_joint_pitch_mm": 3.1615405238876635,
+  "body_length_mm": 38.95192522508759,
+  "width_mm": 2.5
+ },
+ {
+  "name": "2.5 mm strip, butt joint",
+  "pitch_mm": 3.1615405238876635,
+  "strip_angle_deg": 52.256005749615596,
+  "guide_angle_deg": 37.743994250384404,
+  "normal_gap_mm": 0.0,
+  "butt_joint_pitch_mm": 3.1615405238876635,
+  "body_length_mm": 25.292324191101308,
+  "width_mm": 2.5
+ },
+ {
+  "name": "4.0 mm strip, butt joint (nearly axial)",
+  "pitch_mm": 19.8160224854581,
+  "strip_angle_deg": 11.645563967678196,
+  "guide_angle_deg": 78.3544360323218,
+  "normal_gap_mm": 0.0,
+  "butt_joint_pitch_mm": 19.8160224854581,
+  "body_length_mm": 158.5281798836648,
+  "width_mm": 4.0
+ }
+]

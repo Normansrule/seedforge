@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seedforge"
+version = "0.3.0a0"
+description = "Host software, simulator and deterministic vision QA for the SeedForge seed-carrier winding platform (research prototype)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT (software); see LICENSE for hardware and documentation licences" }
+authors = [{ name = "Aleksander Norman" }, { name = "SeedForge contributors" }]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = ["numpy>=1.24", "opencv-python-headless>=4.8", "pyserial>=3.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pyyaml>=6"]
+cad = ["cadquery>=2.4", "trimesh>=4", "playwright>=1.40", "pillow>=10"]
+
+[project.urls]
+Homepage = "https://normansrule.github.io/seedforge/"
+Repository = "https://github.com/Normansrule/seedforge"
+
+[tool.setuptools]
+package-dir = { "" = "software" }
+
+[tool.setuptools.packages.find]
+where = ["software"]
+
+[tool.setuptools.package-data]
+seedforge = ["recipes/*.json", "data/*.json", "simulator/scenarios/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

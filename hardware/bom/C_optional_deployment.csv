@@ -1,0 +1,16 @@
+item_id,view,module,qty,description,key_spec,example_part,preferred_supplier,alternative_supplier,est_unit_usd,est_total_usd,ownership,cad_model,verified_url,notes,change_vs_r3
+C01,C,M10 payload,1,Payload controller,RP2040 board (Raspberry Pi Pico or RP2040-Zero),Raspberry Pi Pico / RP2040-Zero,authorised reseller,AliExpress,4,4.0,buy,vendor,,Gate state machine; logs INTENT to flash before a door opens; fails closed.,
+C02,C,M10 payload,4,Gate servo,SG90,SG90,AliExpress / Amazon,-,1.5,6.0,buy,D03 mounts,,One per cassette cell; mounts with the servo's own M2 screws.,
+C03,C,M10 payload,4,Cell occupancy sensor,TCRT5000 reflective IR module,TCRT5000 module,AliExpress / Amazon,-,0.4,1.6,buy,n/a,,Confirms each release (cell empty after the door opens).,added: release confirmation
+C04,C,M10 payload,1,Payload wiring,"servo extension leads, JST-GH/XH to the FC, heat-shrink",assortment,AliExpress,-,3,3.0,buy,n/a,,"Servos powered from a separate 5 V BEC, not from the Pico.",
+C05,C,M10 payload,1,5 V BEC for servos,3 A,generic UBEC,hobby retailer,AliExpress,3,3.0,buy,n/a,,,
+C06,C,M10 aircraft,1,Flight controller + 4-in-1 ESC stack,F405 FC supported by ArduPilot + 30-40 A 4-in-1 ESC,ArduPilot-supported F405 stack (check the ArduPilot firmware list),hobby retailer,AliExpress,55,55.0,buy,vendor,,Flight control stays on the autopilot. Verify the exact board is supported by ArduPilot before buying.,replaces Pixhawk-class FC + 4 ESCs
+C07,C,M10 aircraft,1,450-class quad frame,"F450-type, purchased",F450 clone,hobby retailer,AliExpress,15,15.0,buy,vendor,,Never print arms or motor mounts.,
+C08,C,M10 aircraft,4,Brushless motor,2212 920-1000 KV,A2212 class,hobby retailer,AliExpress,7,28.0,buy,vendor,,Motor/prop/battery validated as a set.,
+C09,C,M10 aircraft,2,Propeller pairs,1045,generic,hobby retailer,-,2.5,5.0,buy,vendor,,Balance; spares.,
+C10,C,M10 aircraft,1,GNSS + compass,M10-class GPS with compass,generic M10 GPS module,hobby retailer,AliExpress,15,15.0,buy,vendor,,Geofence and sector discipline.,
+C11,C,M10 aircraft,1,3S LiPo,2200 mAh,generic,hobby retailer,-,18,18.0,buy,n/a,,LiPo safety: docs/safety.md.,smaller than R3.1's 4S 5000 mAh
+C12,C,M10 aircraft,1,Balance charger,"2-4S, with certified supply",basic balance charger,hobby retailer,-,15,15.0,owned,n/a,,Do not improvise charging.,
+C13,C,M10 aircraft,1,RC link,ELRS receiver + transmitter,budget ELRS transmitter + receiver,hobby retailer,-,55,55.0,owned,n/a,,ELRS can also carry MAVLink telemetry (no separate telemetry radio).,telemetry radio removed
+C14,C,M10 option,1,Companion computer,Raspberry Pi Zero 2 W,Raspberry Pi Zero 2 W,authorised reseller,-,15,15.0,optional,D05 plate,,Only for terrain classification; pre-planned points do not need it.,optional for the budget build
+C15,C,M10 option,1,Downward camera,Pi camera module (clone),OV5647 module,AliExpress,-,6,6.0,optional,D06 mount,,With C14 only.,optional for the budget build

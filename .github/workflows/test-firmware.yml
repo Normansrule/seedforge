@@ -1,0 +1,34 @@
+name: Firmware tests
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  host-tests:
+    name: Controller core on the host (ASan/UBSan)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make -C tests/firmware
+  compile-uno:
+    name: Compile Arduino Uno core controller
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+          arduino-cli compile --fqbn arduino:avr:uno --warnings all firmware/arduino/seedforge_core
+  compile-esp32:
+    name: Compile XIAO ESP32-C3 bridge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - run: |
+          arduino-cli config init
+          arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32
+          arduino-cli lib install "Adafruit GFX Library" "Adafruit ILI9341"
+          arduino-cli compile --fqbn esp32:esp32:XIAO_ESP32C3 firmware/esp32/seedforge_bridge

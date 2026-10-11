@@ -1,0 +1,9 @@
+{
+  "unique_printed_parts": 55,
+  "factory_target_usd_no_transfer": 370.0,
+  "factory_target_usd_with_transfer": 452.0,
+  "optional_transfer_usd": 82.0,
+  "drone_target_usd": 450.0,
+  "bom_rows": 66,
+  "wiring_rows": 94
+}

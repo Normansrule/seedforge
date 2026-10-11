@@ -1,0 +1,12 @@
+flowchart LR
+  classDef d fill:#f3f5f7,stroke:#5b6b7a,color:#14273a
+  classDef rec fill:#e7f0ea,stroke:#2f6f4f,color:#14273a
+  LOT["Material lot<br/>(Phase 0 measurements)"]:::rec --> RCP["Recipe JSON<br/>provenance + limits"]:::rec
+  CAL["Calibration worksheet"]:::rec --> RCP
+  RCP --> HOST["seedforge.host"]:::d --> CTRL["Uno controller"]:::d
+  CTRL -->|"STATE / TURN / TENSION / COMPLETE"| HOST
+  CAM["Camera frame"]:::d --> VIS["seedforge.vision<br/>deterministic QA"]:::d --> HOST
+  HOST --> TR["trace.csv<br/>(per cycle time series)"]:::rec
+  HOST --> CR["carriers.csv<br/>(one row per carrier ID)"]:::rec
+  VIS --> DS["datasets/raw + labelled<br/>(local, not committed)"]:::rec
+  CR --> DRY["drying tray + position log"]:::rec --> ASM["assembly + final QA"]:::rec
